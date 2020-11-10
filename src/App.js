@@ -56,45 +56,47 @@ class App extends React.Component {
   }
     render(props) {
       return (
-        <div>
-            <div style={{ position: 'fixed', width: '100%', bottom: 0 }}>
-            <TabBar
-            unselectedTintColor="#949494"
-            tintColor="#33A3F4"
-            barTintColor="white"
-          >
-           { this.state.navList.map((item,index)=>(<TabBar.Item
-              title={item.name}
-              key={index}
-              icon={<div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
-              />
-              }
-              selectedIcon={<div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
-              />
-              }
-              selected={this.state.selectedTab === item.path}
-            //   badge={index}
-              onPress={this.goto.bind(null,item.path)
-              }
-              data-seed="logId"
-            >
-            </TabBar.Item>))}
-          
-          </TabBar>
+        <div style={{display:"flex",flexDirection:"column",height:"100%"}}>
+            <div style={{flex:1}}>
+            <Switch >
+            <Route path="/home" component={Home} />
+            <Route path="/mine" component={Mine} />
+            <Route path="/buy" component={Buy} />
+            <Route path="/information" component={Information} />
+            <Route path="/sell" component={Sell} />
+            </Switch>
             </div>
-          <Switch>
-          <Route path="/home" component={Home} />
-          <Route path="/mine" component={Mine} />
-          <Route path="/buy" component={Buy} />
-          <Route path="/information" component={Information} />
-          <Route path="/sell" component={Sell} />
-          </Switch>
+            <div style={{ width: '100%',height:'50px' }}>
+                <TabBar
+                    unselectedTintColor="#949494"
+                    tintColor="#33A3F4"
+                    barTintColor="white"
+                    >
+                    { this.state.navList.map((item,index)=>(<TabBar.Item
+                    title={item.name}
+                    key={index}
+                    icon={<div style={{
+                        width: '22px',
+                        height: '22px',
+                        background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
+                    />
+                    }
+                    selectedIcon={<div style={{
+                        width: '22px',
+                        height: '22px',
+                        background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
+                    />
+                    }
+                    selected={this.state.selectedTab === item.path}
+                    //   badge={index}
+                    onPress={this.goto.bind(null,item.path)
+                    }
+                    data-seed="logId"
+                    >
+                    </TabBar.Item>))}
+                
+                </TabBar>
+            </div>
         </div>
       );
     }
