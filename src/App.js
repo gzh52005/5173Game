@@ -1,7 +1,7 @@
 
 import React from 'react'
 import './App.css';
-import {Route,Switch,withRouter} from 'react-router-dom'
+import {Route,Switch,withRouter,Redirect} from 'react-router-dom'
 import { TabBar } from 'antd-mobile';
 
 import Home from './views/Home'
@@ -54,6 +54,7 @@ class App extends React.Component {
         selectedTab:this.props.location.pathname
     })
   }
+  
     render(props) {
       return (
         <div style={{display:"flex",flexDirection:"column",height:"100%"}}>
@@ -64,12 +65,13 @@ class App extends React.Component {
             <Route path="/buy" component={Buy} />
             <Route path="/information" component={Information} />
             <Route path="/sell" component={Sell} />
+            <Redirect path="/" to="/home" />
             </Switch>
             </div>
             <div style={{ width: '100%',height:'50px' }}>
                 <TabBar
                     unselectedTintColor="#949494"
-                    tintColor="#33A3F4"
+                    tintColor="#FF6600"
                     barTintColor="white"
                     >
                     { this.state.navList.map((item,index)=>(<TabBar.Item
