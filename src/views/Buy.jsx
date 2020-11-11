@@ -1,5 +1,5 @@
 import React from 'react'
-import '../layout/buy.css'
+// import '../layout/buy.css'
 
 function Buy(){
     return(
