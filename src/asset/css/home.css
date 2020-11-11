@@ -1,0 +1,99 @@
+.home .header {
+  z-index: 100;
+  width: 100%;
+  height: 12.8vw;
+  background-color: #FF6600;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+}
+.home .header img {
+  width: 23.4666666667vw;
+  height: 8vw;
+  z-index: 100;
+  display: block;
+}
+.home .header .search {
+  width: 62.1333333333vw;
+  height: 9.6vw;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home .header .search span {
+  width: 21.8666666667vw;
+  height: 5.3333333333vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  padding-left: 6.1333333333vw;
+  color: #ccc;
+  background: #fff url("https://m.5173.com/dist/src/assets/images/search4.png?f1c7c4fe050302588bbeed8011ab1ff2") no-repeat 0;
+  background-size: 20px;
+}
+.home .header .right {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-size: 12px;
+}
+.home .header .right .icon {
+  font-size: 19px;
+}
+.home .banner {
+  width: 100%;
+  height: 38.9333333333vw;
+  margin-top: 12.8vw;
+}
+.home .banner .am-wingblank {
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+}
+.home .banner .am-wingblank .slider,
+.home .banner .am-wingblank .slider-list,
+.home .banner .am-wingblank .slider-frame,
+.home .banner .am-wingblank .slider-slide {
+  height: 100% !important;
+}
+.home .banner .am-wingblank .slider img,
+.home .banner .am-wingblank .slider-list img,
+.home .banner .am-wingblank .slider-frame img,
+.home .banner .am-wingblank .slider-slide img {
+  width: 100%;
+  height: 100%;
+}
+.home .banner .am-wingblank .am-carousel-wrap {
+  margin-bottom: 1.3333333333vw;
+}
+.home .banner .am-wingblank .am-carousel-wrap-dot span {
+  width: 3.0666666667vw;
+  height: 3.0666666667vw;
+  background: rgba(0, 0, 0, 0.6);
+  margin-right: 3.3333333333vw;
+}
+.home .banner .am-wingblank .am-carousel-wrap-dot-active span {
+  background-color: #fff;
+}
+.home .nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: 29.8666666667vw;
+  align-items: center;
+  padding: 4vw 0;
+  background-color: #fff;
+  margin-bottom: 2.6666666667vw;
+}
+.home .nav .item {
+  display: flex;
+  flex-direction: column;
+}
+.home .nav .item img {
+  width: 14.4vw;
+  height: 14.4vw;
+}
