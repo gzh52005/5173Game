@@ -79,6 +79,7 @@ class Home extends React.Component {
         // })
         request.get('/homeApi',{
             hot:true,
+            gametype:1,
             page:1,
             pagesize:10
         }).then(res=>{

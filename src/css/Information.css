@@ -5,3 +5,39 @@
   color: #fff !important;
   font-weight: 900;
 }
+
+.message ul {
+  padding: 0;
+  margin: 0;
+}
+.message ul li {
+  position: relative;
+  height: 17.176vw;
+  margin: 3.8581333333vw;
+  padding: 3.6458666667vw 3.2552vw;
+  background-color: #fff;
+  border-radius: 1.3333333333vw;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+}
+.message ul li img {
+  width: 9.8906666667vw;
+  height: 9.8906666667vw;
+}
+.message ul li p {
+  margin-left: 2.6666666667vw;
+}
+.message ul li p span {
+  display: block;
+  color: #000;
+  font-size: 3.4666666667vw;
+}
+.message ul li p .title {
+  color: #7E7E7E;
+  font-size: 3.2vw;
+}
+.message ul li .icon {
+  position: absolute !important;
+  right: 0;
+}

@@ -58,7 +58,7 @@ class App extends React.Component {
     render(props) {
       return (
         <div style={{display:"flex",flexDirection:"column",height:"100%"}}>
-            <div style={{flex:1}}>
+            <div style={{flex:1,background:"#F1F1F1"}}>
             <Switch >
             <Route path="/home" component={Home} />
             <Route path="/mine" component={Mine} />

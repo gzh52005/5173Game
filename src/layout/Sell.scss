@@ -1,0 +1,18 @@
+@function vw($px) {
+    @return ($px / 750) * 100vw
+};
+
+
+#m-tabs-0-0{
+    background: url(../asset/image/shouji.png) 32% no-repeat;
+    background-size: vw(40);
+    // background-color: #F1F1F1;
+}
+#m-tabs-0-0,#m-tabs-0-1{
+    background-color: #F1F1F1;
+}
+.am-tabs-default-bar-underline,.am-tabs-default-bar-tab-active{
+    border: none !important;
+    background-color: #fff !important;
+    color: #FF6600 !important;
+}
