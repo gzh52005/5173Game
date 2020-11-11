@@ -44,7 +44,6 @@ class App extends React.Component {
       this.goto = this.goto.bind(this)
     }
   goto(path){
-      console.log(path);
       this.props.history.push(path)
       this.setState({
           selectedTab:path
