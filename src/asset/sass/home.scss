@@ -1,0 +1,119 @@
+@function vw($px) {
+    @return ($px/750)*100vw;
+}
+.home{
+
+    .header {
+        z-index: 100;
+        width: 100%;
+        height: vw(96);
+        background-color: #FF6600;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: fixed;
+        top: 0;
+    
+        img {
+            width: vw(176);
+            height: vw(60);
+            z-index: 100;
+            display: block;
+        }
+    
+        .search {
+            width: vw(466);
+            height: vw(72);
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            span {
+                width: vw(164);
+                height: vw(40);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                // height: 100%;
+                font-size: 18px;
+                padding-left: vw(46);
+                color: #ccc;
+                background: #fff url('https://m.5173.com/dist/src/assets/images/search4.png?f1c7c4fe050302588bbeed8011ab1ff2') no-repeat 0;
+                background-size: 20px;
+            }
+        }
+    
+        .right {
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+            font-size: 12px;
+    
+            .icon {
+                font-size: 19px;
+            }
+        }
+    }
+    
+    .banner {
+        width: 100%;
+        height: vw(292);
+        margin-top: vw(96);
+    
+        .am-wingblank {
+            width: 100%;
+            height: 100%;
+            margin: 0 !important;
+    
+            .slider,
+            .slider-list,
+            .slider-frame,
+            .slider-slide {
+                height: 100% !important;
+    
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            
+            }
+            .am-carousel-wrap{
+                margin-bottom: vw(10);
+            }
+    
+            .am-carousel-wrap-dot {
+                span {
+                    width: vw(23);
+                    height: vw(23);
+                    background: rgba(0, 0, 0, .6);
+                    margin-right:vw(25) ;
+                }
+            }
+    
+            .am-carousel-wrap-dot-active {
+                span {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+    .nav{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        height: vw(224);
+        align-items: center;
+        padding: vw(30) 0;
+        background-color: #fff;
+        margin-bottom: vw(20);
+        .item{
+            display: flex;
+            flex-direction: column;
+            img{
+                width: vw(108);
+                height: vw(108);
+            }
+        }
+    }
+}
