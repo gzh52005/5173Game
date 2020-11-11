@@ -25,6 +25,7 @@ class Buy extends React.Component{
         }
     }
     render(){
+        
         return(
             <div>
                 <div className="buytop clear">
