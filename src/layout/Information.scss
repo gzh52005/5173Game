@@ -1,0 +1,11 @@
+@function vw($px) {
+    @return ($px / 750) * 100vw
+};
+
+.am-navbar{
+    height: vw(94) !important;
+    .am-navbar-title{
+        color: #fff !important;
+        font-weight: 900;
+    }
+}

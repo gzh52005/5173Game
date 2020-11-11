@@ -1,9 +1,13 @@
 import React from 'react'
+import '../layout/buy.css'
 
 function Buy(){
     return(
         <div>
-            我要买
+            <div className="buytop">
+                <h1>我要买</h1>
+                <img src="../img/history.png" alt=""/>
+            </div>
         </div>
     )
 }

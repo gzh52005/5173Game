@@ -1,0 +1,7 @@
+.am-navbar {
+  height: 12.5333333333vw !important;
+}
+.am-navbar .am-navbar-title {
+  color: #fff !important;
+  font-weight: 900;
+}

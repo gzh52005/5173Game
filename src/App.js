@@ -9,6 +9,7 @@ import Mine from './views/Mine'
 import Buy from './views/Buy'
 import Information from './views/Information'
 import Sell from './views/Sell'
+import Login from'./views/login'
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -43,7 +44,6 @@ class App extends React.Component {
       this.goto = this.goto.bind(this)
     }
   goto(path){
-      console.log(path);
       this.props.history.push(path)
       this.setState({
           selectedTab:path
@@ -65,6 +65,7 @@ class App extends React.Component {
             <Route path="/buy" component={Buy} />
             <Route path="/information" component={Information} />
             <Route path="/sell" component={Sell} />
+            <Route path="/login" component={Login} />
             <Redirect path="/" to="/home" />
             </Switch>
             </div>
