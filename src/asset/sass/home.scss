@@ -1,8 +1,9 @@
 @function vw($px) {
     @return ($px/750)*100vw;
 }
-.home{
 
+.home {
+margin-bottom: vw(120);
     .header {
         z-index: 100;
         width: 100%;
@@ -13,14 +14,14 @@
         justify-content: space-around;
         position: fixed;
         top: 0;
-    
+
         img {
             width: vw(176);
             height: vw(60);
             z-index: 100;
             display: block;
         }
-    
+
         .search {
             width: vw(466);
             height: vw(72);
@@ -28,7 +29,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-    
+
             span {
                 width: vw(164);
                 height: vw(40);
@@ -43,54 +44,55 @@
                 background-size: 20px;
             }
         }
-    
+
         .right {
             display: flex;
             flex-direction: column;
             color: #fff;
             font-size: 12px;
-    
+
             .icon {
                 font-size: 19px;
             }
         }
     }
-    
+
     .banner {
         width: 100%;
         height: vw(292);
         margin-top: vw(96);
-    
+
         .am-wingblank {
             width: 100%;
             height: 100%;
             margin: 0 !important;
-    
+
             .slider,
             .slider-list,
             .slider-frame,
             .slider-slide {
                 height: 100% !important;
-    
+
                 img {
                     width: 100%;
                     height: 100%;
                 }
-            
+
             }
-            .am-carousel-wrap{
+
+            .am-carousel-wrap {
                 margin-bottom: vw(10);
             }
-    
+
             .am-carousel-wrap-dot {
                 span {
                     width: vw(23);
                     height: vw(23);
                     background: rgba(0, 0, 0, .6);
-                    margin-right:vw(25) ;
+                    margin-right: vw(25);
                 }
             }
-    
+
             .am-carousel-wrap-dot-active {
                 span {
                     background-color: #fff;
@@ -98,7 +100,8 @@
             }
         }
     }
-    .nav{
+
+    .nav {
         width: 100%;
         display: flex;
         justify-content: space-around;
@@ -107,13 +110,103 @@
         padding: vw(30) 0;
         background-color: #fff;
         margin-bottom: vw(20);
-        .item{
+
+        .item {
             display: flex;
             flex-direction: column;
-            img{
+            align-items: center;
+
+            img {
                 width: vw(108);
                 height: vw(108);
             }
         }
+    }
+
+    .tags {
+        height: vw(554);
+        width: 100%;
+
+        .am-tabs-default-bar-content {
+            background-color: #e8e8e8;
+
+        }
+
+        .am-tabs-default-bar-tab-active {
+            color: #FF6600;
+            background-color: #fff;
+            border-bottom: 1px solid #FF6600;
+        }
+
+        .tagsChildren {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            height: vw(453);
+
+
+        }
+
+        .am-grid {
+            width: 100%;
+            .am-grid-icon {
+                width: vw(126);
+                height: vw(126);
+                border-radius: vw(20);
+            }
+
+            .am-grid-text {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+                font-size: 14px !important;
+            }
+        }
+    }
+    .more{
+        height: vw(98);
+        color: #666;
+        font-size: vw(30);
+        line-height: vw(98);
+        text-align: center;
+        background-color: #fff;
+        // border-top: 1px solid #ccc;
+        margin-bottom: vw(20);
+    }
+    .recommend{
+        height: vw(1177);
+        background-color: #fff;
+    }
+    .my-list .spe .am-list-extra {
+        flex-basis: initial;
+      }
+    .my-list{
+        .am-list-header{
+            height: vw(80);
+            font-weight: 900;
+            text-align: center;
+            color: #000;
+            font-size: vw(30);
+        }
+        .am-list-item{
+            height: vw(219);
+        }
+        .am-list-thumb>img{
+            width: vw(126);
+            height: vw(126);
+            border-radius: 15px;
+        }
+        .am-list-brief:nth-child(1){
+            color:#FF6600;
+        }
+        .am-list-brief:nth-child(2){
+            font-size: 12px;
+        }
+
+    }
+    .myColor{
+        color:#FF6600;
     }
 }
