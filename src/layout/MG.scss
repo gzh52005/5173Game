@@ -1,0 +1,37 @@
+@function vw($px) {
+    @return ($px / 750) * 100vw
+};
+.clear::after {
+    content: ".";
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.mgbox{
+    float: left;
+    .UL{
+        width: vw(645);
+        .lishow{
+            float: left;
+            display: block;
+            width: vw(142.5);
+            height: vw(195);
+            background: #F00;
+            margin: vw(30) vw(33.75);
+            img{
+                display: block;
+                width: vw(142.5);
+                height: vw(142.5);
+                background: blue;
+            }
+            p{
+                text-align: center;
+                margin-bottom: 0;
+                line-height: vw(56);
+            }
+        }
+    }
+}

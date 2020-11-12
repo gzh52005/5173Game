@@ -10,5 +10,6 @@ module.exports = function (app) {
         pathRewrite: {
             '^/homeApi': '' // 这样处理后，最终得到的接口路径为： http://localhost:8080/xxx
         }
-    }))
+    })
+    )
 }
