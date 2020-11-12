@@ -1,7 +1,8 @@
 import React, { useCallback, useState } from 'react'
 import '../layout/login.scss'
 import '../layout/base.css'
-import { Button, message } from 'antd';
+import {message } from 'antd';
+import {Toast} from 'antd-mobile'
 
 
 
@@ -29,12 +30,9 @@ class Login extends React.Component{
     login=()=>{
         console.log(this.state);
         if(!this.state.username){
-            message.error({
-                content: '请输入用户名',
-                className: 'error_name_class',
-              });
+            Toast.info('请输入用户名');
         }else if(!this.state.password){
-            message.error('请输入密码');
+            Toast.info('请输入密码');
         }
     }
     render() {
