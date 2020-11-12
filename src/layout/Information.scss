@@ -9,3 +9,46 @@
         font-weight: 900;
     }
 }
+
+.message{
+  ul{
+    padding: 0;
+    margin: 0;
+      li{
+          position: relative;
+          height: vw(128.82);
+          margin: vw(28.936);
+          padding: vw(27.344) vw(24.414);
+          background-color: #fff;
+          border-radius: vw(10);
+          list-style: none;
+          display: flex;
+          justify-content: flex-start;
+          img{
+              
+              width: vw(74.18);
+              height: vw(74.18);
+          }
+          p{
+              margin-left: vw(20);
+              span{
+                  display: block;
+                  color: #000;
+                  font-size: vw(26);
+                //   span:nth-last-of-type(2){
+                //       color: red;
+                //   }
+            }
+          .title{
+              color: #7E7E7E;
+              font-size: vw(24);
+          }
+          
+        }
+              .icon{
+                  position: absolute !important;
+                  right: 0;
+              }
+      }
+  }
+}

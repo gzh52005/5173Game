@@ -10,6 +10,11 @@ import Buy from './views/Buy'
 import Information from './views/Information'
 import Sell from './views/Sell'
 import Login from'./views/login'
+import MG from'./views/MG'
+import PC from'./views/PC'
+
+import Reg from './views/reg'
+import MineInfo from './views/MineInfo'
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -58,7 +63,7 @@ class App extends React.Component {
     render(props) {
       return (
         <div style={{display:"flex",flexDirection:"column",height:"100%"}}>
-            <div style={{flex:1}}>
+            <div style={{flex:1,background:"#F1F1F1"}}>
             <Switch >
             <Route path="/home" component={Home} />
             <Route path="/mine" component={Mine} />
@@ -66,6 +71,10 @@ class App extends React.Component {
             <Route path="/information" component={Information} />
             <Route path="/sell" component={Sell} />
             <Route path="/login" component={Login} />
+            <Route path="/MG" component={MG} />
+            <Route path="/PC" component={PC} />
+            <Route path='/reg' component={Reg}/>
+            <Route path='/mineinfo' component={MineInfo}/>
             <Redirect path="/" to="/home" />
             </Switch>
             </div>

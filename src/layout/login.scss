@@ -1,10 +1,48 @@
+@function vw($px) {
+    @return ($px / 750) * 100vw
+};
 .login{
-    p{
-        width: 200px;
-        height: 200px;
-        background-color: rgb(221, 240, 240);
-        span{
-            color: rgb(79, 42, 165);
-        }
+    height: 100%;
+    background-color: #ffffff;
+    .loginHead{
+        width: 100%;
+        height: vw(90);
+        border-bottom: vw(1) solid #eee7e7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: vw(35);
     }
+
+    .loginFrom{
+        width: 100%;
+        padding: vw(25);
+        p{
+            width: 100%;
+            height: vw(88);
+            background-color: #f0f0f0;
+            display: flex;
+            label{
+                width: vw(172);
+                height: 100%;
+                padding:0 vw(25);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            input{
+                flex: 1;
+                background-color: #f0f0f0;
+            }
+        }
+        
+    }
+    .loginBtn{
+            width: 100%;
+            height: vw(90);
+            margin-top: vw(10);
+            background-color: #f60;
+            color: #ffffff;
+            font-size: vw(30);
+        }
 }

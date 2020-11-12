@@ -85,11 +85,14 @@ class Home extends React.Component {
         // }).then(res => {
         //     console.log(res);
         // })
-        // request.get('/homeApi',{
-        //     hot:true,
-        //     gametype:2,
-        //     page:1,
-        //     pagesize:10,
+        request.get('/homeApi',{
+            hot:true,
+            gametype:1,
+            page:1,
+            pagesize:10
+        }).then(res=>{
+            console.log(res);
+        })
 
         // }).then(res=>{
         //     this.setState({
