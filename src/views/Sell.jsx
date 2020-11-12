@@ -148,6 +148,7 @@ getData=(type,query)=>{
                             <img src={img}/>
                             <div className="search">搜索游戏</div>
                     </div>
+                    
                     <WingBlank size="lg" className="sc-example">
                         <SegmentedControl 
                         values={['手游', '端游']} 

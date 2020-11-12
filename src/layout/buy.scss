@@ -10,6 +10,11 @@
     clear: both;
     overflow: hidden;
 }
+// .buybox{
+//     width: 100%;
+//     height: vw(200);
+    
+// }
 .buytop{
     background: #f60;
     padding: vw(12) vw(0);
@@ -39,18 +44,11 @@
         line-height: vw(60);
     }
 }
-.am-wingblank{
-    margin: 0;
-}
-.am-wingblank.am-wingblank-lg{
+
+.am-wingblank,.am-wingblank.am-wingblank-lg{
     margin: 0 !important;
 }
-.sub-title {
-    color: #888;
-    font-size: 14px;
-    padding: 30px 0 18px 0;
-    margin: 0;
-}
+
 .am-segment-item-selected{
     background: #ffffff !important;
     color: #f60 !important;
@@ -59,16 +57,4 @@
     font-size: 16px;
     color: #000;
     border: 1PX solid #F8F8F8
-}
-.buygame{
-    .sortli{
-        float: right;
-        li{
-            display: block;
-            list-style: none;
-            width: vw(105);
-            height: vw(105);
-            background: #888;
-        }
-    }
 }
