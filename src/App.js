@@ -11,8 +11,6 @@ import Information from './views/Information'
 import Sell from './views/Sell'
 import Login from './views/login'
 import Reg from './views/reg'
-import MG from './views/MG'
-import PC from './views/PC'
 import MineInfo from './views/MineInfo'
 import Details from './views/details.jsx'
 import {HomeOutlined,ShoppingCartOutlined,MessageOutlined,UserOutlined,TransactionOutlined,MessageFilled,HomeFilled } from '@ant-design/icons'
@@ -87,8 +85,6 @@ class App extends React.Component {
             <Route path="/information" component={Information} />
             <Route path="/sell" component={Sell} />
             <Route path="/login" component={Login} />
-            <Route path="/MG" component={MG} />
-            <Route path="/PC" component={PC} />
             <Route path='/reg' component={Reg}/>
             <Route path='/details' component={Details}/>
             <Route path='/mineinfo' component={MineInfo}/>
