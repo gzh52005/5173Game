@@ -5,7 +5,7 @@ import { Button, message } from 'antd';
 
 
 
-class Login extends React.Component{
+class Reg extends React.Component{
     constructor(){
         super()
         this.state={
@@ -40,7 +40,7 @@ class Login extends React.Component{
     render() {
         return (
             <div className='login'>
-                <header className='loginHead'>5173登录</header>
+                <header className='loginHead'>5173免费注册</header>
                 <form className='loginFrom' >
                     <p>
                         <label htmlFor="username">用户名</label>
@@ -50,7 +50,7 @@ class Login extends React.Component{
                         <label htmlFor="password">密&nbsp;&nbsp;&nbsp;码</label>
                         <input type="text" onBlur={this.changePsw.bind(null)} id='password' placeholder='请输入密码' />
                     </p>
-                    <input type="button" className='loginBtn' value="登录" onClick={this.login}/>
+                    <input type="button" className='loginBtn' value="注册" onClick={this.login}/>
                 </form>
             </div>
 
@@ -59,4 +59,4 @@ class Login extends React.Component{
 
 }
 
-export default Login
+export default Reg

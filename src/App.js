@@ -13,6 +13,8 @@ import Login from'./views/login'
 import MG from'./views/MG'
 import PC from'./views/PC'
 
+import Reg from './views/reg'
+import MineInfo from './views/MineInfo'
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -71,6 +73,8 @@ class App extends React.Component {
             <Route path="/login" component={Login} />
             <Route path="/MG" component={MG} />
             <Route path="/PC" component={PC} />
+            <Route path='/reg' component={Reg}/>
+            <Route path='/mineinfo' component={MineInfo}/>
             <Redirect path="/" to="/home" />
             </Switch>
             </div>
