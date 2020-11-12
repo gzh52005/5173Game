@@ -48,6 +48,7 @@ class App extends React.Component {
                 name:"我的",
                 path:"/mine",
                 icon:<UserOutlined />,
+                select:<UserOutlined />,
             }
         ]
       };
@@ -79,8 +80,7 @@ class App extends React.Component {
               title={item.name}
               key={index}
               icon={item.icon}
-              selectedIcon={item.icon}
-              
+              selectedIcon={item.select}
               selected={this.state.selectedTab === item.path}
             //   badge={index}
               onPress={this.goto.bind(null,item.path)
