@@ -114,6 +114,9 @@ getData=(type,query)=>{
         })
     }
     firs = (e)=>{
+        this.setState({
+            page:1
+        })
         if(e.type=='img'){
             this.getData(1,{
                 query:JSON.stringify({"is_hot":"1", "game_type":`${this.state.type}`}),
