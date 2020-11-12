@@ -74,7 +74,7 @@ class Home extends React.Component {
         ]
     }
     componentDidMount() {
-        request.get('/homeApi/5173hot').then(res => {
+        request.get('/homeApi/goods/5173hot').then(res => {
             console.log('recommend', res);
             this.setState({
                 recData: res.data
@@ -82,8 +82,8 @@ class Home extends React.Component {
         })
         this.getData(2);
     }
-    getData(type) {
-        request.get('/homeApi/5173home', {
+    getData=(type)=> {
+        request.get('/homeApi/goods/5173home', {
             hot: true,
             gametype: type,
             page: 1,
@@ -103,10 +103,17 @@ class Home extends React.Component {
             }
         })
     }
+    goto=(data)=>{
+        console.log(data);
+        // this.props.history.push('/details')
+
+    }
     render() {
         const data = this.state.hotMGame.map((item, index) => ({
+            ...item,
             icon: item.gameImageUrl,
             text: item.name,
+            
         }))
         const data1 = this.state.hotDGame.map((item1, index) => ({
             icon: item1.gameImageUrl,
@@ -178,12 +185,14 @@ class Home extends React.Component {
                     // onTabClick={() => { this.getData() }}
                     >
                         <div className="tagsChildren">
-                            <Grid data={data} hasLine={false} square={false} onClick={() => {
-                                console.log('1');
+                            <Grid data={data} hasLine={false} square={false} onClick={(el) => {
+                                this.props.history.push('/details/'+el.text)
                             }} />
                         </div>
                         <div className="tagsChildren">
-                            <Grid data={data1} hasLine={false} square={false} />
+                            <Grid data={data1} hasLine={false} square={false} onClick={(el) => {
+                                this.props.history.push('/details/'+el.text)
+                            }}/>
                         </div>
                     </Tabs>
                 </div>
@@ -200,7 +209,7 @@ class Home extends React.Component {
                                     arrow="horizontal"
                                     thumb={list.gameImage}
                                     multipleLine
-                                    onClick={() => { }}
+                                    onClick={() => {this.props.history.push('/details/'+list.gameName) }}
                                     key={idx}
                                 >
                                     {/* {typeof((list.latestInformation)*1)===Number?latestInformation*1+'游戏币' :list.latestInformation} */}
