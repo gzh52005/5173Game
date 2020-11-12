@@ -1,14 +1,58 @@
-#m-tabs-0-0 {
-  background: url(../asset/image/shouji.png) 32% no-repeat;
-  background-size: 5.3333333333vw;
+.am-tabs-right {
+  overflow-y: scroll !important;
+}
+.am-tabs-right .am-tabs-tab-bar-wrap {
+  position: fixed;
+  right: 0;
 }
 
-#m-tabs-0-0, #m-tabs-0-1 {
+.am-tabs-default-bar-content {
+  overflow-y: scroll !important;
   background-color: #F1F1F1;
 }
+.am-tabs-default-bar-content .am-tabs-default-bar-tab {
+  width: 14vw !important;
+  height: 13.016vw !important;
+}
+.am-tabs-default-bar-content #m-tabs-0-0 {
+  color: rgba(0, 0, 0, 0.1);
+  background: url(../asset/image/hot2.png) 50% no-repeat;
+  background-size: 6.6666666667vw;
+}
 
-.am-tabs-default-bar-underline, .am-tabs-default-bar-tab-active {
+.am-tabs-tab-bar-wrap .am-tabs-default-bar-underline,
+.am-tabs-default-bar-tab-active {
   border: none !important;
   background-color: #fff !important;
   color: #FF6600 !important;
+}
+
+.selltop {
+  background: #197fee;
+  padding: 1.6vw 0vw;
+}
+.selltop h1 {
+  display: block;
+  float: left;
+  font-weight: normal;
+  margin: 0;
+  padding-left: 42vw;
+  font-size: 5vw;
+  color: #ffffff;
+}
+.selltop img {
+  float: right;
+  display: block;
+  width: 6vw;
+  margin: 1.3333333333vw 4vw;
+}
+.selltop .search {
+  margin-top: 10vw;
+  margin-left: 5vw;
+  width: 90vw;
+  height: 8vw;
+  background: #fff;
+  border-radius: 2vw;
+  text-align: center;
+  line-height: 8vw;
 }

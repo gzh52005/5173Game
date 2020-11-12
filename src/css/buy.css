@@ -1,0 +1,65 @@
+.clear::after {
+  content: ".";
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both;
+  overflow: hidden;
+}
+
+.buytop {
+  background: #f60;
+  padding: 1.6vw 0vw;
+}
+.buytop h1 {
+  display: block;
+  float: left;
+  font-weight: normal;
+  margin: 0;
+  padding-left: 42vw;
+  font-size: 5vw;
+  color: #ffffff;
+}
+.buytop img {
+  float: right;
+  display: block;
+  width: 6vw;
+  margin: 1.3333333333vw 4vw;
+}
+.buytop .search {
+  margin-top: 10vw;
+  margin-left: 5vw;
+  width: 90vw;
+  height: 8vw;
+  background: #fff;
+  border-radius: 2vw;
+  text-align: center;
+  line-height: 8vw;
+}
+
+.am-wingblank {
+  margin: 0;
+}
+
+.am-wingblank.am-wingblank-lg {
+  margin: 0 !important;
+}
+
+.sub-title {
+  color: #888;
+  font-size: 14px;
+  padding: 30px 0 18px 0;
+  margin: 0;
+}
+
+.am-segment-item-selected {
+  background: #ffffff !important;
+  color: #f60 !important;
+}
+
+.am-segment .am-segment-item {
+  font-size: 16px;
+  color: #000;
+  border: 1PX solid #F8F8F8;
+}
