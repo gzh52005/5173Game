@@ -1,0 +1,30 @@
+@function vw($px) {
+    @return ($px / 750) * 100vw
+};
+.HeaderCom{
+    .headermian{
+        width: 100%;
+        height: vw(93);
+        border-bottom: vw(1) solid #dbdada;
+        display: flex;
+        .anticon{
+            width: vw(96);
+            height: 100%;
+            text-align: center;
+            line-height: vw(96);
+            font-size: vw(35);
+        }
+        .headercnt{
+           width: vw(558);
+            text-align: center;
+            line-height: vw(96);
+        }
+        .selectbtn{
+            width: vw(96);
+            height: 100%;
+            text-align: center;
+            line-height: vw(96);
+            font-size: vw(35);
+        }
+    }
+}

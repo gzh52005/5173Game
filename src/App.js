@@ -15,6 +15,7 @@ import PC from'./views/PC'
 
 import Reg from './views/reg'
 import MineInfo from './views/MineInfo'
+import Order from './views/Order'
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -75,6 +76,7 @@ class App extends React.Component {
             <Route path="/PC" component={PC} />
             <Route path='/reg' component={Reg}/>
             <Route path='/mineinfo' component={MineInfo}/>
+            <Route path='/order' component={Order}/>
             <Redirect path="/" to="/home" />
             </Switch>
             </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import '../layout/Mine.scss'
 import { List } from 'antd-mobile';
 import imgs from '../assets/img/tx_nologin.png'
+import avimgs from '../assets/img/gral-tesy.jpg'
 
 import '../assets/iconfont/iconfont.css'
 import { data, datax } from '../assets/mineData'
@@ -26,10 +27,9 @@ class Mine extends React.Component {
 
                 <List className="my-list shopitem" >
                     {
-
                         datax[0].map(items => {
                             return (
-                                <Item  key={items.icon} extra={items.center} arrow="horizontal" onClick={() => { }}>
+                                <Item  key={items.icon} extra={items.center} arrow="horizontal" onClick={() => {this.props.history.push(items.path)}}>
                                     <div>
                                         <svg className="icon" aria-hidden="true">
                                             <use xlinkHref={items.icon}></use>
@@ -43,6 +43,9 @@ class Mine extends React.Component {
                 </List>
 
                 <List className="my-list avclass">
+                <Item className='avimg'>
+                    <img src={avimgs} alt=""/>
+                </Item>
                     {
 
                         datax[1].map(items => {
