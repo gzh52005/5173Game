@@ -9,6 +9,7 @@ import Mine from './views/Mine'
 import Buy from './views/Buy'
 import Information from './views/Information'
 import Sell from './views/Sell'
+import {HomeOutlined,ShoppingCartOutlined,MessageOutlined,UserOutlined,TransactionOutlined,MessageFilled,HomeFilled } from '@ant-design/icons'
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -19,23 +20,36 @@ class App extends React.Component {
         navList:[
             {
                 name:"首页",
-                path:'/home'
+                path:'/home',
+                icon:<HomeOutlined />,
+                select:<HomeFilled />
             },
             {
                 name:"我要买",
-                path:"/buy"
+                path:"/buy",
+                icon:<ShoppingCartOutlined />,
+                select:<ShoppingCartOutlined />
+
             },
             {
                 name:"卖",
-                path:"/sell"
+                path:"/sell",
+                icon:<TransactionOutlined />,
+                select:<TransactionOutlined />
+
             },
             {
                 name:"消息",
-                path:"/information"
+                path:"/information",
+                icon:<MessageOutlined />,
+                select:<MessageFilled />
             },
             {
                 name:"我的",
-                path:"/mine"
+                path:"/mine",
+                icon:<UserOutlined />,
+                select:<UserOutlined />
+
             }
         ]
       };
@@ -60,24 +74,15 @@ class App extends React.Component {
             <div style={{ position: 'fixed', width: '100%', bottom: 0 }}>
             <TabBar
             unselectedTintColor="#949494"
-            tintColor="#33A3F4"
+            tintColor="#ff6600"
             barTintColor="white"
           >
            { this.state.navList.map((item,index)=>(<TabBar.Item
               title={item.name}
               key={index}
-              icon={<div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
-              />
-              }
-              selectedIcon={<div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
-              />
-              }
+              icon={item.icon}
+              selectedIcon={item.select}
+              
               selected={this.state.selectedTab === item.path}
             //   badge={index}
               onPress={this.goto.bind(null,item.path)

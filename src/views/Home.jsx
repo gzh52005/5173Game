@@ -4,7 +4,7 @@ import '../asset/sass/home.scss';
 import {
     DesktopOutlined, MobileOutlined
 } from '@ant-design/icons';
-import { Carousel, WingBlank, Tabs, Badge, Grid, List } from 'antd-mobile';
+import { Carousel, WingBlank, Tabs, Badge, Grid, List, Button, Card, WhiteSpace } from 'antd-mobile';
 
 
 class Home extends React.Component {
@@ -58,45 +58,22 @@ class Home extends React.Component {
         hotDGame: [],
         recData: [],
         disabled: false,
+        troubleImg: [
+            {
+                url: 'https://m.5173.com/dist/src/assets/images/kefu/callmenu10.png?56d651e008710d9490e555dcf836f9f2',
+                name: '咨询'
+            },
+            {
+                url: 'https://m.5173.com/dist/src/assets/images/kefu/callmenu11.png?a4a1422d28a79b70bbd24db1aa601f7c',
+                name: '投诉'
+            },
+            {
+                url: 'https://m.5173.com/dist/src/assets/images/kefu/callmenu12.png?3ae5b57abf661b72a5ee12dfac6d1b21',
+                name: '建议'
+            }
+        ]
     }
     componentDidMount() {
-        // simulate img loading
-        // setTimeout(() => {
-        //   this.setState({
-        //     data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFex44444lOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-        //   });
-        // }, 100);
-        // request.post('/homeApi',{
-        //     firstPY: "HOT",gameType: 2,pageIndex: 1,pageSize: 8
-        // }).then(res=>{
-        //     console.log('首页数据=',res);
-        // })
-        // https://m.5173.com/m-base-frontend/HomePageBanner/selectBanner
-        // 
-        // fetch('/homeApi/m-base-frontend/category/searchgamelistbytype', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     mode: 'cors',
-        //     body: JSON.stringify({
-        //         "firstPY": "HOT", "gameType": 2, "pageIndex": 1, "pageSize": 8
-        //     })
-        // }).then(res => {
-        //     console.log(res);
-        // })
-        // request.get('/homeApi',{
-        //     hot:true,
-        //     gametype:2,
-        //     page:1,
-        //     pagesize:10,
-
-        // }).then(res=>{
-        //     this.setState({
-        //         hotMGame:res.data,
-        //     })
-        // })   
-        // https://m.5173.com/m-base-frontend/HotRecommend/selectHotRecommend
         request.get('/homeApi/5173hot').then(res => {
             console.log('recommend', res);
             this.setState({
@@ -217,9 +194,7 @@ class Home extends React.Component {
                 <div className="recommend">
                     <List renderHeader={() => '热门推荐'} className="my-list">
                         {
-                            this.state.recData.map((list,idx) => (
-                                
-                               
+                            this.state.recData.map((list, idx) => (
                                 <Item
                                     arrow="horizontal"
                                     thumb={list.gameImage}
@@ -228,13 +203,33 @@ class Home extends React.Component {
                                     key={idx}
                                 >
                                     {/* {typeof((list.latestInformation)*1)===Number?latestInformation*1+'游戏币' :list.latestInformation} */}
-                                    {list.gameName+list.goodsTypeName}<Brief>{list.goodsTypeName==='游戏币'?list.latestInformation*1+'游戏币' :list.latestInformation}</Brief><Brief>{list.regionName+list.serverName || '全区全服'}</Brief>
+                                    {list.gameName + list.goodsTypeName}<Brief>{list.goodsTypeName === '游戏币' ? list.latestInformation * 1 + '游戏币' : list.latestInformation}</Brief><Brief>{list.regionName + list.serverName || '全区全服'}</Brief>
                                 </Item>
-                                
                             ))
                         }
-
                     </List>
+                </div>
+                <div className="checkCenter">
+                    <p>验证中心</p>
+                    <span>输入客服QQ号，可以为您验证是否为5173官方客服</span>
+                </div>
+                <div className="checkInput">
+                    <input type="number" placeholder="请输入客服QQ号" />
+                    <Button size="small">立即验证</Button>
+                </div>
+                <div className="trouble">
+                        <h4>问题反馈</h4>
+                        <div className="kefu">
+                        {this.state.troubleImg.map((item,index) =>(
+                                <div className="innerTro" key={index}>
+                                    <img src={item.url} alt=""/>
+                                    <span>{item.name}</span>
+                                </div>
+                        ))}
+                        </div>
+                </div>
+                <div className="copy">
+                Copyright © 2002-2024 5173.com 版权所有ICP证：浙B2-20090127 （金华比奇网络技术有限公司）<br/>5173触屏版
                 </div>
             </div>
         )
