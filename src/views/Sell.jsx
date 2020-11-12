@@ -6,35 +6,56 @@ import img from '../img/history.png'
 import hot2 from '../asset/image/hot2.png'
 import request from '../utils/request';
 import { Menu } from 'antd';
-const { SubMenu } = Menu;
 
 
 const num1 = <img className="hot" src={hot2}/>
 class Sell extends React.Component{
     state = {
         tabs:[num1,"A","B","C","D","E","F","G","H","J","K","L","M","N","P","Q","R","S","T","W","X","Y","Z"],
-        num:'',
+        num:0,
         current: '0',
         data:[],
         page:1,
-        flag:false
+        flag:false,
+        type:2
     }
-
+getData=(url,query)=>{
+ request.get(url,query).then(res=>{
+    this.setState({
+        data:res.data
+    })
+ })
+}
     onChange=(e)=>{
+        console.log(e.nativeEvent.selectedSegmentIndex,'oooooooooooooo');
+        
         this.setState({
             num:e.nativeEvent.selectedSegmentIndex,
-            page:1
-        })
-        request.get('/homeApi/5173type',{
-            hot:"1",
-            gametype:this.state.num+1,
             page:1,
-            pagesize:15
-        }).then(res=>{
-            this.setState({
-                data:res.data
-            })
+            type:1
         })
+        if(e.nativeEvent.selectedSegmentInde==0){
+            this.getData('/homeApi/5173type',{
+                query:JSON.stringify({"is_hot":"1", "game_type":"2"}),
+                page:1,
+                pagesize:15})
+        }else if(e.nativeEvent.selectedSegmentInde==1){
+            this.getData('/homeApi/5173type',{
+                query:JSON.stringify({"is_hot":"1", "game_type":"1"}),
+                page:1,
+                pagesize:15})
+        }
+        // request.get('/homeApi/5173type',{
+        //     query:JSON.stringify({"is_hot":"1", "game_type":`${this.state.type==1?1:2}`}),
+        //     page:1,
+        //     pagesize:15
+        // }).then(res=>{
+        //     this.setState({
+        //         data:res.data
+        //     })
+        
+        // })
+        console.log(this.state.num);
     }
     // 滚动条事件
     onScroll = (scroll)=>{
@@ -50,19 +71,16 @@ class Sell extends React.Component{
         this.setState({ current: e.key });
       };
 
-    goto = (path)=>{
+    goto = (path,data)=>{
         console.log(path);
-        console.log(this.props);
-        // this.props.history.push({
-            
-        // })
-        
-        
+        console.log(data);
+        this.props.history.push({
+            pathname:path+'/'+data.name,
+        })
     }
     componentWillMount(){
         request.get('/homeApi/5173type',{
-            hot:"1",
-            gametype:"2",
+            query:JSON.stringify({"is_hot":"1", "game_type":`2`,}),
             page:1,
             pagesize:15
         }).then(res=>{
@@ -77,8 +95,7 @@ class Sell extends React.Component{
         if(newstate.flag != flag){
             page++
             request.get('/homeApi/5173type',{
-                hot:"1",
-                gametype:"2",
+                query:JSON.stringify({"is_hot":"1", "game_type":`${this.state.type}`,}),
                 page:page,
                 pagesize:15
             }).then(res=>{
@@ -121,7 +138,7 @@ class Sell extends React.Component{
                 <div style={{overflow:"hidden",flex:"1",display:"flex",justifyContent:"space-between"}}>
                     <div className="sell_main">
                         <ul onScroll={this.onScroll.bind(this)}>
-                            {this.state.data.map((item,index)=>(<li key={index} onClick={this.goto.bind(null,'/details')}>
+                            {this.state.data.map((item,index)=>(<li key={index} onClick={this.goto.bind(null,'/details',item)}>
                                 <img src={item.game_image_url} alt=""/>
                             <p>{item.name}</p>
                             </li>))}
