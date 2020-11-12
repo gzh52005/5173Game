@@ -9,6 +9,11 @@ import Mine from './views/Mine'
 import Buy from './views/Buy'
 import Information from './views/Information'
 import Sell from './views/Sell'
+import Login from './views/Login'
+import Reg from './views/Reg'
+import MG from './views/MG'
+import PC from './views/PC'
+import MineInfo from './views/MineInfo'
 import {HomeOutlined,ShoppingCartOutlined,MessageOutlined,UserOutlined,TransactionOutlined,MessageFilled,HomeFilled } from '@ant-design/icons'
 class App extends React.Component {
     constructor(props) {
