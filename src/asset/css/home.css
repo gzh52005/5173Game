@@ -32,7 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 3.7333333333vw;
   padding-left: 6.1333333333vw;
   color: #ccc;
   background: #fff url("https://m.5173.com/dist/src/assets/images/search4.png?f1c7c4fe050302588bbeed8011ab1ff2") no-repeat 0;
@@ -43,6 +43,8 @@
   flex-direction: column;
   color: #fff;
   font-size: 12px;
+  align-items: center;
+  justify-content: center;
 }
 .home .header .right .icon {
   font-size: 19px;
@@ -102,7 +104,7 @@
   height: 14.4vw;
 }
 .home .tags {
-  height: 73.8666666667vw;
+  height: 74.1333333333vw;
   width: 100%;
 }
 .home .tags .am-tabs-default-bar-content {
@@ -119,6 +121,7 @@
   justify-content: center;
   background-color: #fff;
   height: 60.4vw;
+  overflow: hidden;
 }
 .home .tags .am-grid {
   width: 100%;

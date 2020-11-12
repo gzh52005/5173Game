@@ -38,7 +38,7 @@
                 align-items: center;
                 justify-content: center;
                 // height: 100%;
-                font-size: 18px;
+                font-size: vw(28);
                 padding-left: vw(46);
                 color: #ccc;
                 background: #fff url('https://m.5173.com/dist/src/assets/images/search4.png?f1c7c4fe050302588bbeed8011ab1ff2') no-repeat 0;
@@ -51,7 +51,8 @@
             flex-direction: column;
             color: #fff;
             font-size: 12px;
-
+            align-items: center;
+            justify-content: center;
             .icon {
                 font-size: 19px;
             }
@@ -125,7 +126,7 @@
     }
 
     .tags {
-        height: vw(554);
+        height: vw(556);
         width: 100%;
 
         .am-tabs-default-bar-content {
@@ -138,14 +139,13 @@
             background-color: #fff;
             border-bottom: 1px solid #FF6600;
         }
-
         .tagsChildren {
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: #fff;
             height: vw(453);
-
+            overflow: hidden;
 
         }
 
