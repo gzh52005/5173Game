@@ -91,7 +91,7 @@ class App extends React.Component {
             <Route path='/reg' component={Reg}/>
             <Route path='/details' component={Details}/>
             <Route path='/mineinfo' component={MineInfo}/>
-            <Redirect path="/" to="/home" />
+            <Redirect path="/" to="/home" exact/>
             </Switch>
             </div>
             <div style={{ width: '100%',height:'50px' }}>
