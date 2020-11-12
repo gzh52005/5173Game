@@ -1,5 +1,5 @@
 .home {
-  margin-bottom: 16vw;
+  margin-bottom: 13.0666666667vw;
 }
 .home .header {
   z-index: 100;
@@ -147,9 +147,13 @@
 .home .recommend {
   height: 156.9333333333vw;
   background-color: #fff;
+  margin-bottom: 2.6666666667vw;
 }
 .home .my-list .spe .am-list-extra {
   flex-basis: initial;
+}
+.home .my-list {
+  z-index: 10;
 }
 .home .my-list .am-list-header {
   height: 10.6666666667vw;
@@ -159,7 +163,8 @@
   font-size: 4vw;
 }
 .home .my-list .am-list-item {
-  height: 29.2vw;
+  z-index: 10;
+  height: 29.4vw;
 }
 .home .my-list .am-list-thumb > img {
   width: 16.8vw;
@@ -174,4 +179,79 @@
 }
 .home .myColor {
   color: #FF6600;
+}
+.home .checkCenter {
+  height: 18.1333333333vw;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  padding-top: 4vw;
+}
+.home .checkCenter p {
+  font-weight: 900;
+  font-size: 16px;
+  margin: 0 0 1.3333333333vw 0;
+}
+.home .checkCenter span {
+  font-size: 12px;
+  color: #666;
+}
+.home .checkInput {
+  background-color: #fff;
+  height: 14.4vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 2.6666666667vw;
+}
+.home .checkInput input {
+  border: none;
+  border-left: 2px solid #FF6600;
+  caret-color: #ccc;
+}
+.home .checkInput .am-button {
+  background-color: #FF6600;
+  color: #fff;
+}
+.home .trouble {
+  height: 25.8666666667vw;
+}
+.home .trouble h4 {
+  font-size: 16px;
+  background-color: #fff;
+  height: 11.7333333333vw;
+  margin: 0;
+  text-align: center;
+  line-height: 11.7333333333vw;
+  margin-bottom: 0.2666666667vw;
+}
+.home .trouble .kefu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 14.1333333333vw;
+}
+.home .trouble .kefu .innerTro {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  width: 33.3333333333vw;
+  height: 14.1333333333vw;
+  justify-content: center;
+  margin: 0 0.2666666667vw;
+}
+.home .trouble .kefu .innerTro img {
+  width: 10vw;
+  height: 10vw;
+  margin-right: 1.3333333333vw;
+}
+.home .copy {
+  width: 100%;
+  height: 20vw;
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  line-height: 4vw;
+  padding-top: 5.3333333333vw;
 }

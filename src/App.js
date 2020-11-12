@@ -1,7 +1,7 @@
-
+import logo from './logo.svg';
 import React from 'react'
 import './App.css';
-import {Route,Switch,withRouter,Redirect} from 'react-router-dom'
+import {Route,Switch,withRouter} from 'react-router-dom'
 import { TabBar } from 'antd-mobile';
 
 import Home from './views/Home'
@@ -9,12 +9,7 @@ import Mine from './views/Mine'
 import Buy from './views/Buy'
 import Information from './views/Information'
 import Sell from './views/Sell'
-import Login from'./views/login'
-import MG from'./views/MG'
-import PC from'./views/PC'
-
-import Reg from './views/reg'
-import MineInfo from './views/MineInfo'
+import {HomeOutlined,ShoppingCartOutlined,MessageOutlined,UserOutlined,TransactionOutlined,MessageFilled,HomeFilled } from '@ant-design/icons'
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -25,23 +20,34 @@ class App extends React.Component {
         navList:[
             {
                 name:"首页",
-                path:'/home'
+                path:'/home',
+                icon:<HomeOutlined />,
+                select:<HomeFilled />
             },
             {
                 name:"我要买",
-                path:"/buy"
+                path:"/buy",
+                icon:<ShoppingCartOutlined />,
+                select:<ShoppingCartOutlined />
+
             },
             {
                 name:"卖",
-                path:"/sell"
+                path:"/sell",
+                icon:<TransactionOutlined />,
+                select:<TransactionOutlined />
+
             },
             {
                 name:"消息",
-                path:"/information"
+                path:"/information",
+                icon:<MessageOutlined />,
+                select:<MessageFilled />
             },
             {
                 name:"我的",
-                path:"/mine"
+                path:"/mine",
+                icon:<UserOutlined />,
             }
         ]
       };
@@ -49,6 +55,7 @@ class App extends React.Component {
       this.goto = this.goto.bind(this)
     }
   goto(path){
+      console.log(path);
       this.props.history.push(path)
       this.setState({
           selectedTab:path
@@ -59,56 +66,38 @@ class App extends React.Component {
         selectedTab:this.props.location.pathname
     })
   }
-  
     render(props) {
       return (
-        <div style={{display:"flex",flexDirection:"column",height:"100%"}}>
-            <div style={{flex:1,background:"#F1F1F1"}}>
-            <Switch >
-            <Route path="/home" component={Home} />
-            <Route path="/mine" component={Mine} />
-            <Route path="/buy" component={Buy} />
-            <Route path="/information" component={Information} />
-            <Route path="/sell" component={Sell} />
-            <Route path="/login" component={Login} />
-            <Route path="/MG" component={MG} />
-            <Route path="/PC" component={PC} />
-            <Route path='/reg' component={Reg}/>
-            <Route path='/mineinfo' component={MineInfo}/>
-            <Redirect path="/" to="/home" />
-            </Switch>
+        <div>
+            <div style={{ position: 'fixed', width: '100%', bottom: 0 }}>
+            <TabBar
+            unselectedTintColor="#949494"
+            tintColor="#ff6600"
+            barTintColor="white"
+          >
+           { this.state.navList.map((item,index)=>(<TabBar.Item
+              title={item.name}
+              key={index}
+              icon={item.icon}
+              selectedIcon={item.icon}
+              
+              selected={this.state.selectedTab === item.path}
+            //   badge={index}
+              onPress={this.goto.bind(null,item.path)
+              }
+              data-seed="logId"
+            >
+            </TabBar.Item>))}
+          
+          </TabBar>
             </div>
-            <div style={{ width: '100%',height:'50px' }}>
-                <TabBar
-                    unselectedTintColor="#949494"
-                    tintColor="#FF6600"
-                    barTintColor="white"
-                    >
-                    { this.state.navList.map((item,index)=>(<TabBar.Item
-                    title={item.name}
-                    key={index}
-                    icon={<div style={{
-                        width: '22px',
-                        height: '22px',
-                        background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
-                    />
-                    }
-                    selectedIcon={<div style={{
-                        width: '22px',
-                        height: '22px',
-                        background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
-                    />
-                    }
-                    selected={this.state.selectedTab === item.path}
-                    //   badge={index}
-                    onPress={this.goto.bind(null,item.path)
-                    }
-                    data-seed="logId"
-                    >
-                    </TabBar.Item>))}
-                
-                </TabBar>
-            </div>
+          <Switch>
+          <Route path="/home" component={Home} />
+          <Route path="/mine" component={Mine} />
+          <Route path="/buy" component={Buy} />
+          <Route path="/information" component={Information} />
+          <Route path="/sell" component={Sell} />
+          </Switch>
         </div>
       );
     }
