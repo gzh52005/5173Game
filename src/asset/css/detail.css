@@ -1,0 +1,59 @@
+.detail {
+  height: 100%;
+  width: 100%;
+}
+.detail .header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+.detail .header .am-navbar {
+  height: 12.5333333333vw;
+  background-color: #f6f6f6;
+}
+.detail .header .am-navbar .am-navbar-title {
+  color: #000 !important;
+  font-weight: 100;
+}
+.detail .header .nav {
+  display: flex;
+  height: 10.1333333333vw;
+  background-color: #fff;
+}
+.detail .header .nav span {
+  color: #999;
+  margin: 0 3.2vw;
+  line-height: 10.1333333333vw;
+}
+.detail .header .active {
+  color: #ff6600;
+}
+.detail .header .selects {
+  height: 11.4666666667vw;
+  background-color: #fff;
+  border-top: 1px solid #e8e8e8;
+}
+.detail .header .search, .detail .header .am-search {
+  background-color: #c9c9ce;
+}
+.detail .header .am-search-cancel {
+  color: #000;
+  font-size: 3.7333333333vw;
+}
+.detail .main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  margin-top: 45.8666666667vw;
+}
+.detail .main .mainTop {
+  margin-bottom: 2.6666666667vw;
+}
+.detail .main .mainTop img {
+  width: 100%;
+  height: 22.4vw;
+}
