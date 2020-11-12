@@ -2,30 +2,7 @@
     @return ($px / 750) * 100vw
 };
 
-.am-tabs-right{
-    overflow-y:scroll !important;
-    .am-tabs-tab-bar-wrap{
-        position: fixed;
-        right: 0;
-    }
-}
 
-.am-tabs-default-bar-content{
-   
-    overflow-y: scroll !important;
-    // background: url(../asset/image/shouji.png) 32% no-repeat;
-    .am-tabs-default-bar-tab{
-        width: vw(105) !important;
-        height: vw(97.62) !important;
-    }
-    background-color: #F1F1F1;
-    #m-tabs-0-0{
-        color: rgba(0,0,0,0.1);
-        background: url(../asset/image/hot2.png) 50% no-repeat;
-          background-size: vw(50);
-    }
-}
-.am-tabs-tab-bar-wrap
 .am-tabs-default-bar-underline,.am-tabs-default-bar-tab-active{
     border: none !important;
     background-color: #fff !important;
@@ -46,7 +23,7 @@
     img{
         float: right;
         display: block;
-        width: vw(45);
+        width: vw(38);
         margin: vw(10) vw(30);
     }
     .search{
@@ -59,4 +36,54 @@
         text-align: center;
         line-height: vw(60);
     }
+}
+.ant-menu {
+    background-color: #F1F1F1 !important;
+    height: 100%;
+    overflow-y: scroll;
+    width: vw(105);
+    .ant-menu-item{
+        padding: 0 !important;
+        text-align: center;
+        margin-top: 0 !important;
+    }
+    .ant-menu-item-selected{
+        background-color: #fff !important;
+        color: #FF6600 !important;
+    }
+    img{
+        width: vw(38) !important;
+    }
+  
+}
+.sell_main{
+    width: 100%;
+  
+  ul{
+      height: 100%;
+      overflow-y: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      background-color: #fff;
+      li{
+          width: vw(212.84);
+          overflow: hidden;
+          text-align: center;
+          padding: vw(20) 0;
+          img{
+            width: vw(138.66);
+            border-radius: vw(20);
+        }
+        p{
+            width: 100%;
+            height: vw(48);
+            font-size: vw(26);
+            overflow: hidden;
+            padding-top: vw(10);
+        }
+       
+      }
+  }
+    
 }
