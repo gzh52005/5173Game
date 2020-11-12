@@ -1,10 +1,10 @@
-import React, { Fragment, useEffect } from 'react';
+import React from 'react';
 import request from '../utils/request';
 import '../asset/sass/home.scss';
 import {
     DesktopOutlined, MobileOutlined
 } from '@ant-design/icons';
-import { Carousel, WingBlank, Tabs, Badge, Grid, List, Button, Card, WhiteSpace } from 'antd-mobile';
+import { Carousel, WingBlank, Tabs, Badge, Grid, List, Button } from 'antd-mobile';
 
 
 class Home extends React.Component {
@@ -124,11 +124,8 @@ class Home extends React.Component {
                 <div className="banner">
                     <WingBlank>
                         <Carousel
-                            autoplay={false}
+                            autoplay={true}
                             infinite
-                        // beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-                        // afterChange={index => console.log('slide to', index)}
-
                         >
                             {this.state.banner.map(val => (
                                 <a
@@ -154,7 +151,9 @@ class Home extends React.Component {
                 <div className="nav">
                     {
                         this.state.nav.map((item, index) => (
-                            <div className="item" key={index}>
+                            <div className="item" key={index} onClick={() => {
+                                this.props.history.push('/buy')
+                            }}>
                                 <img src={item.url} alt="" />
                                 <p>{item.name}</p>
                             </div>)
@@ -188,7 +187,9 @@ class Home extends React.Component {
                         </div>
                     </Tabs>
                 </div>
-                <div className="more">
+                <div className="more" onClick={() => {
+                    this.props.history.push('/buy')
+                }}>
                     更多游戏
                 </div>
                 <div className="recommend">
@@ -218,18 +219,18 @@ class Home extends React.Component {
                     <Button size="small">立即验证</Button>
                 </div>
                 <div className="trouble">
-                        <h4>问题反馈</h4>
-                        <div className="kefu">
-                        {this.state.troubleImg.map((item,index) =>(
-                                <div className="innerTro" key={index}>
-                                    <img src={item.url} alt=""/>
-                                    <span>{item.name}</span>
-                                </div>
+                    <h4>问题反馈</h4>
+                    <div className="kefu">
+                        {this.state.troubleImg.map((item, index) => (
+                            <div className="innerTro" key={index}>
+                                <img src={item.url} alt="" />
+                                <span>{item.name}</span>
+                            </div>
                         ))}
-                        </div>
+                    </div>
                 </div>
                 <div className="copy">
-                Copyright © 2002-2024 5173.com 版权所有ICP证：浙B2-20090127 （金华比奇网络技术有限公司）<br/>5173触屏版
+                    Copyright © 2002-2024 5173.com 版权所有ICP证：浙B2-20090127 （金华比奇网络技术有限公司）<br />5173触屏版
                 </div>
             </div>
         )

@@ -1,3 +1,7 @@
+* {
+  touch-action: pan-y;
+}
+
 .home {
   margin-bottom: 13.0666666667vw;
 }
@@ -106,22 +110,28 @@
 .home .tags {
   height: 74.1333333333vw;
   width: 100%;
+  background-color: #f8f8f8;
 }
 .home .tags .am-tabs-default-bar-content {
-  background-color: #e8e8e8;
+  background-color: #f8f8f8;
 }
 .home .tags .am-tabs-default-bar-tab-active {
   color: #FF6600;
   background-color: #fff;
-  border-bottom: 1px solid #FF6600;
+  border: none;
 }
 .home .tags .tagsChildren {
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #fff;
   height: 60.4vw;
   overflow: hidden;
+}
+.home .tags .am-tabs-pane-wrap-active, .home .tags .am-tabs-pane-wrap, .home .tags .am-tabs {
+  height: 100%;
+  background-color: #fff;
 }
 .home .tags .am-grid {
   width: 100%;
@@ -145,6 +155,7 @@
   line-height: 13.0666666667vw;
   text-align: center;
   background-color: #fff;
+  border-top: 1px solid #f8f8f8;
   margin-bottom: 2.6666666667vw;
 }
 .home .recommend {
@@ -212,6 +223,8 @@
   border: none;
   border-left: 2px solid #FF6600;
   caret-color: #ccc;
+  height: 5.3333333333vw;
+  padding-left: 2.6666666667vw;
 }
 .home .checkInput .am-button {
   background-color: #FF6600;
