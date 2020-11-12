@@ -69,8 +69,25 @@ class App extends React.Component {
   }
     render(props) {
       return (
-        <div>
-            <div style={{ position: 'fixed', width: '100%', bottom: 0 }}>
+        
+            
+        <div style={{display:"flex",flexDirection:"column",height:"100%"}}>
+            <div style={{flex:1,background:"#F1F1F1",overflowY:"auto"}}>
+            <Switch >
+            <Route path="/home" component={Home} />
+            <Route path="/mine" component={Mine} />
+            <Route path="/buy" component={Buy} />
+            <Route path="/information" component={Information} />
+            <Route path="/sell" component={Sell} />
+            <Route path="/login" component={Login} />
+            <Route path="/MG" component={MG} />
+            <Route path="/PC" component={PC} />
+            <Route path='/reg' component={Reg}/>
+            <Route path='/mineinfo' component={MineInfo}/>
+            <Redirect path="/" to="/home" />
+            </Switch>
+            </div>
+            <div style={{ width: '100%',height:'50px' }}>
             <TabBar
             unselectedTintColor="#949494"
             tintColor="#ff6600"
@@ -91,13 +108,6 @@ class App extends React.Component {
           
           </TabBar>
             </div>
-          <Switch>
-          <Route path="/home" component={Home} />
-          <Route path="/mine" component={Mine} />
-          <Route path="/buy" component={Buy} />
-          <Route path="/information" component={Information} />
-          <Route path="/sell" component={Sell} />
-          </Switch>
         </div>
       );
     }
