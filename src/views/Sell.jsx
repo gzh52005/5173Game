@@ -15,11 +15,14 @@ class Sell extends React.Component{
         tabs:[num1,"A","B","C","D","E","F","G","H","J","K","L","M","N","P","Q","R","S","T","W","X","Y","Z"],
         num:'',
         current: '0',
-        data:[]
+        data:[],
+        page:1,
+        flag:false
     }
     onChange=(e)=>{
         this.setState({
-            num:e.nativeEvent.selectedSegmentIndex
+            num:e.nativeEvent.selectedSegmentIndex,
+            page:1
         })
         request.get('/homeApi/5173type',{
             hot:"1",
@@ -30,15 +33,22 @@ class Sell extends React.Component{
             this.setState({
                 data:res.data
             })
-            
         })
-        
+    }
+    onScroll = (scroll)=>{
+
+        if(scroll.target.scrollTop +scroll.target.clientHeight>=scroll.target.scrollHeight){
+            this.setState({
+                flag:true,
+                page:this.state.page+1
+            })
+        }
     }
     handleClick = e => {
-        console.log('click ', e);
         this.setState({ current: e.key });
       };
-    componentDidMount(){
+
+    componentWillMount(){
         request.get('/homeApi/5173type',{
             hot:"1",
             gametype:"2",
@@ -48,8 +58,35 @@ class Sell extends React.Component{
             this.setState({
                 data:res.data
             })
-            
         })
+    }
+
+    shouldComponentUpdate(newprops,newstate){
+        let {flag,data,page} = this.state
+        if(newstate.flag != flag){
+            page++
+            request.get('/homeApi/5173type',{
+                hot:"1",
+                gametype:"2",
+                page:page,
+                pagesize:15
+            }).then(res=>{
+                if(res.data){
+                    data.push(...res.data)
+                    this.setState({
+                        data,
+                        flag:false,
+                        page:page
+                    })
+                }else{
+                    this.setState({
+                        flag:true
+                    })
+                }
+            })
+            return true
+        }
+        return true
     }
    
     render(){
@@ -72,7 +109,7 @@ class Sell extends React.Component{
                 </div>
                 <div style={{overflow:"hidden",flex:"1",display:"flex",justifyContent:"space-between"}}>
                     <div className="sell_main">
-                        <ul>
+                        <ul onScroll={this.onScroll.bind(this)}>
                             {this.state.data.map((item,index)=>(<li key={index}>
                                 <img src={item.game_image_url} alt=""/>
                             <p>{item.name}</p>
