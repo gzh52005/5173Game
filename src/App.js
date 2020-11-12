@@ -10,6 +10,8 @@ import Buy from './views/Buy'
 import Information from './views/Information'
 import Sell from './views/Sell'
 import Login from'./views/login'
+import Reg from './views/reg'
+import MineInfo from './views/MineInfo'
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -67,6 +69,8 @@ class App extends React.Component {
             <Route path="/information" component={Information} />
             <Route path="/sell" component={Sell} />
             <Route path="/login" component={Login} />
+            <Route path='/reg' component={Reg}/>
+            <Route path='/mineinfo' component={MineInfo}/>
             <Redirect path="/" to="/home" />
             </Switch>
             </div>
