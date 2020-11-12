@@ -19,6 +19,7 @@ class Sell extends React.Component{
         page:1,
         flag:false
     }
+
     onChange=(e)=>{
         this.setState({
             num:e.nativeEvent.selectedSegmentIndex,
@@ -35,6 +36,7 @@ class Sell extends React.Component{
             })
         })
     }
+    // 滚动条事件
     onScroll = (scroll)=>{
 
         if(scroll.target.scrollTop +scroll.target.clientHeight>=scroll.target.scrollHeight){
@@ -48,6 +50,15 @@ class Sell extends React.Component{
         this.setState({ current: e.key });
       };
 
+    goto = (path)=>{
+        console.log(path);
+        console.log(this.props);
+        // this.props.history.push({
+            
+        // })
+        
+        
+    }
     componentWillMount(){
         request.get('/homeApi/5173type',{
             hot:"1",
@@ -110,7 +121,7 @@ class Sell extends React.Component{
                 <div style={{overflow:"hidden",flex:"1",display:"flex",justifyContent:"space-between"}}>
                     <div className="sell_main">
                         <ul onScroll={this.onScroll.bind(this)}>
-                            {this.state.data.map((item,index)=>(<li key={index}>
+                            {this.state.data.map((item,index)=>(<li key={index} onClick={this.goto.bind(null,'/details')}>
                                 <img src={item.game_image_url} alt=""/>
                             <p>{item.name}</p>
                             </li>))}
