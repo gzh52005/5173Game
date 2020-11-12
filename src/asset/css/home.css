@@ -1,5 +1,9 @@
+* {
+  touch-action: pan-y;
+}
+
 .home {
-  margin-bottom: 16vw;
+  margin-bottom: 13.0666666667vw;
 }
 .home .header {
   z-index: 100;
@@ -32,7 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 3.7333333333vw;
   padding-left: 6.1333333333vw;
   color: #ccc;
   background: #fff url("https://m.5173.com/dist/src/assets/images/search4.png?f1c7c4fe050302588bbeed8011ab1ff2") no-repeat 0;
@@ -43,6 +47,8 @@
   flex-direction: column;
   color: #fff;
   font-size: 12px;
+  align-items: center;
+  justify-content: center;
 }
 .home .header .right .icon {
   font-size: 19px;
@@ -102,23 +108,30 @@
   height: 14.4vw;
 }
 .home .tags {
-  height: 73.8666666667vw;
+  height: 74.1333333333vw;
   width: 100%;
+  background-color: #f8f8f8;
 }
 .home .tags .am-tabs-default-bar-content {
-  background-color: #e8e8e8;
+  background-color: #f8f8f8;
 }
 .home .tags .am-tabs-default-bar-tab-active {
   color: #FF6600;
   background-color: #fff;
-  border-bottom: 1px solid #FF6600;
+  border: none;
 }
 .home .tags .tagsChildren {
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #fff;
   height: 60.4vw;
+  overflow: hidden;
+}
+.home .tags .am-tabs-pane-wrap-active, .home .tags .am-tabs-pane-wrap, .home .tags .am-tabs {
+  height: 100%;
+  background-color: #fff;
 }
 .home .tags .am-grid {
   width: 100%;
@@ -142,14 +155,19 @@
   line-height: 13.0666666667vw;
   text-align: center;
   background-color: #fff;
+  border-top: 1px solid #f8f8f8;
   margin-bottom: 2.6666666667vw;
 }
 .home .recommend {
   height: 156.9333333333vw;
   background-color: #fff;
+  margin-bottom: 2.6666666667vw;
 }
 .home .my-list .spe .am-list-extra {
   flex-basis: initial;
+}
+.home .my-list {
+  z-index: 10;
 }
 .home .my-list .am-list-header {
   height: 10.6666666667vw;
@@ -159,7 +177,8 @@
   font-size: 4vw;
 }
 .home .my-list .am-list-item {
-  height: 29.2vw;
+  z-index: 10;
+  height: 29.4vw;
 }
 .home .my-list .am-list-thumb > img {
   width: 16.8vw;
@@ -174,4 +193,81 @@
 }
 .home .myColor {
   color: #FF6600;
+}
+.home .checkCenter {
+  height: 18.1333333333vw;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  padding-top: 4vw;
+}
+.home .checkCenter p {
+  font-weight: 900;
+  font-size: 16px;
+  margin: 0 0 1.3333333333vw 0;
+}
+.home .checkCenter span {
+  font-size: 12px;
+  color: #666;
+}
+.home .checkInput {
+  background-color: #fff;
+  height: 14.4vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 2.6666666667vw;
+}
+.home .checkInput input {
+  border: none;
+  border-left: 2px solid #FF6600;
+  caret-color: #ccc;
+  height: 5.3333333333vw;
+  padding-left: 2.6666666667vw;
+}
+.home .checkInput .am-button {
+  background-color: #FF6600;
+  color: #fff;
+}
+.home .trouble {
+  height: 25.8666666667vw;
+}
+.home .trouble h4 {
+  font-size: 16px;
+  background-color: #fff;
+  height: 11.7333333333vw;
+  margin: 0;
+  text-align: center;
+  line-height: 11.7333333333vw;
+  margin-bottom: 0.2666666667vw;
+}
+.home .trouble .kefu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 14.1333333333vw;
+}
+.home .trouble .kefu .innerTro {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  width: 33.3333333333vw;
+  height: 14.1333333333vw;
+  justify-content: center;
+  margin: 0 0.2666666667vw;
+}
+.home .trouble .kefu .innerTro img {
+  width: 10vw;
+  height: 10vw;
+  margin-right: 1.3333333333vw;
+}
+.home .copy {
+  width: 100%;
+  height: 20vw;
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  line-height: 4vw;
+  padding-top: 5.3333333333vw;
 }
