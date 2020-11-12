@@ -1,11 +1,23 @@
 import React from 'react'
 import '../asset/sass/detail.scss'
-class Details extends React.Component{
-
-    render(){
-        return(
+import { NavBar, Icon } from 'antd-mobile';
+class Details extends React.Component {
+    state={}
+    componentDidMount(){
+        console.log(this.props);
+    }
+    render() {
+        return (
             <div>
-                详情
+                <NavBar
+                    mode="light"
+                    icon={<Icon type="left" />}
+                    onLeftClick={() => console.log('onLeftClick')}
+                    rightContent={[
+                        <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
+                        <Icon key="1" type="ellipsis" />,
+                    ]}
+                >NavBar</NavBar>
             </div>
         )
     }
