@@ -14,7 +14,9 @@ import Reg from './views/reg'
 import MG from './views/MG'
 import PC from './views/PC'
 import MineInfo from './views/MineInfo'
+import Details from './views/details.jsx'
 import {HomeOutlined,ShoppingCartOutlined,MessageOutlined,UserOutlined,TransactionOutlined,MessageFilled,HomeFilled } from '@ant-design/icons'
+import Order from './views/Order'
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -88,7 +90,10 @@ class App extends React.Component {
             <Route path="/MG" component={MG} />
             <Route path="/PC" component={PC} />
             <Route path='/reg' component={Reg}/>
+            <Route path='/details' component={Details}/>
             <Route path='/mineinfo' component={MineInfo}/>
+            <Redirect path="/" to="/home" exact/>
+            <Route path='/order' component={Order}/>
             <Redirect path="/" to="/home" />
             </Switch>
             </div>

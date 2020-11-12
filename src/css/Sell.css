@@ -59,12 +59,10 @@
 .sell_main ul {
   height: 100%;
   overflow-y: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
   background-color: #fff;
 }
 .sell_main ul li {
+  float: left;
   width: 28.3786666667vw;
   overflow: hidden;
   text-align: center;
