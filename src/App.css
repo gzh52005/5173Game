@@ -8,3 +8,9 @@
   #tab-bar .demo-preview-item .am-tab-bar {
     background-color: white;
   }
+  .am-tab-bar-tab{
+    font-size: 22px;
+  }
+  .am-tab-bar{
+    z-index: 10000;
+  }
