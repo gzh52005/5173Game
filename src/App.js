@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import React from 'react'
 import './App.css';
-import {Route,Switch,withRouter} from 'react-router-dom'
+import {Route,Switch,withRouter,Redirect} from 'react-router-dom'
 import { TabBar } from 'antd-mobile';
 
 import Home from './views/Home'
