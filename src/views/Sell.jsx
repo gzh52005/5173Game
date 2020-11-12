@@ -21,7 +21,7 @@ class Sell extends React.Component{
     }
 getData=(type,query)=>{
     if(type==1){
-        request.get('/homeApi/5173type',query).then(res=>{
+        request.get('/homeApi/goods/5173type',query).then(res=>{
             this.setState({
                 data:res.data
             })
@@ -29,7 +29,7 @@ getData=(type,query)=>{
     }else if(type==2){
         let {data,page} = this.state
         page++
-        request.get('/homeApi/5173type',{
+        request.get('/homeApi/goods/5173type',{
                 query:JSON.stringify({"is_hot":"1", "game_type":`${this.state.type}`,}),
                 page:page,
                 pagesize:15
@@ -50,7 +50,9 @@ getData=(type,query)=>{
     }
 
 }
-    onChange=(e)=>{        
+    onChange=(e)=>{     
+  
+           e.target.scrollTop=0
         if(e.nativeEvent.selectedSegmentIndex==0){
             this.setState({
                 num:e.nativeEvent.selectedSegmentIndex,
@@ -81,13 +83,18 @@ getData=(type,query)=>{
     onScroll = (scroll)=>{
         if(scroll.target.scrollTop +scroll.target.clientHeight>=scroll.target.scrollHeight){
             this.setState({
-                flag:true,
+                // flag:flas,
                 page:this.state.page+1
             })
+            this.getData(2)
         }
     }
     handleClick = e => {
-        this.setState({ current: e.key });
+        this.setState({ current: e.key});
+        // this.getData(1,{
+        //     query:JSON.stringify({"is_hot":"1", "game_type":`${this.state.type}`}),
+        //     page:1,
+        //     pagesize:15})
       };
 
     goto = (path,data)=>{
@@ -96,7 +103,7 @@ getData=(type,query)=>{
         })
     }
     componentWillMount(){
-        request.get('/homeApi/5173type',{
+        request.get('/homeApi/goods/5173type',{
             query:JSON.stringify({"is_hot":"1", "game_type":`2`,}),
             page:1,
             pagesize:15
@@ -116,14 +123,18 @@ getData=(type,query)=>{
             this.getData(1,{query:JSON.stringify({"first_py":e, "game_type":`${this.state.type}`})})
         }
     }
-    shouldComponentUpdate(newprops,newstate){
-        let {flag} = this.state
-        if(newstate.flag != flag){
-            this.getData(2)
-            return true
-        }
-        return true
-    }
+    // shouldComponentUpdate(newprops,newstate){
+    //     console.log(newstate);
+    //     console.log(this.state.page);
+        
+        
+    //     let {flag} = this.state
+    //     if(newstate.flag != flag){
+    //         this.getData(2)
+    //         return true
+    //     }
+    //     return true
+    // }
    
     render(){
         const { current } = this.state;
