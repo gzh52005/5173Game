@@ -54,7 +54,6 @@
 
         .am-list-line {
             padding: 0;
-
             .am-list-content {
                 padding: 0;
                 width: 100%;
@@ -86,6 +85,9 @@
 .am-list-item {
     .am-list-line{
         .am-list-extra{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
             font-size: vw(16) !important;
         }
     }

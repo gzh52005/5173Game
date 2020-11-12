@@ -1,0 +1,58 @@
+@function vw($px) {
+    @return ($px / 750) * 100vw
+}
+
+;
+
+.avatarlist {
+    width: 100%;
+    height: vw(160);
+    padding: vw(28) !important;
+    margin-top: 0;
+    background-color: #ffffff;
+
+}
+
+//      
+.am-list{
+    margin-top: 0;
+    margin-bottom: vw(20);
+}
+
+.am-list-body {
+    .am-list-item {
+        padding: 0;
+
+        .am-list-line {
+            padding: 0;
+            .am-list-content{
+                font-size: vw(28);
+            }
+            .am-list-extra {
+                padding: 0;
+                height: 100%;
+
+                img {
+                    height: 100%;
+                    width: vw(104);
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+
+.listmsg{
+    margin-bottom: vw(20);
+    .am-list-body{
+        .am-list-item{
+            .am-list-line{
+                padding: 0 vw(30);
+                .am-list-content{
+                    font-size: vw(28);
+                }
+            }
+        }
+    }
+}
