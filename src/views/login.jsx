@@ -3,6 +3,7 @@ import '../layout/login.scss'
 import '../layout/base.css'
 import {message } from 'antd';
 import {Toast} from 'antd-mobile'
+import request from '../utils/request'
 
 
 
@@ -34,6 +35,10 @@ class Login extends React.Component{
         }else if(!this.state.password){
             Toast.info('请输入密码');
         }
+        // request.get('http://47.110.59.220:5200/user/login',{
+        //     name:'包子',
+        //     password:'w12345678'
+        // })
     }
     render() {
         return (
