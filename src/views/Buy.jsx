@@ -40,9 +40,20 @@ class Buy extends React.Component{
                         style={{height:'40px',background: '#F8F8F8'}}
                         onChange={this.onChange}/>
                     </WingBlank>
+                <div className="buygame clear">
                     {   
                         this.state.type==1?<MG/>:<PC/>
                     }
+                    <div className="sortli">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </div>
+                </div>
+                    
                 </div>  
             </div>
         )  
