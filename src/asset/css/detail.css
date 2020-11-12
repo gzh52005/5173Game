@@ -1,0 +1,23 @@
+.detail {
+  height: 100%;
+  width: 100%;
+}
+.detail .header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+.detail .header .nav {
+  display: flex;
+  height: 10.1333333333vw;
+}
+.detail .header .nav span {
+  color: #999;
+}
+.detail .header .active {
+  color: #ff6600;
+}
+.detail .header .selects {
+  height: 11.4666666667vw;
+}

@@ -8,7 +8,8 @@ class Details extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="detail">
+                <div className="header">
                 <NavBar
                     mode="light"
                     icon={<Icon type="left" />}
@@ -18,6 +19,14 @@ class Details extends React.Component {
                         <Icon key="1" type="ellipsis" />,
                     ]}
                 >NavBar</NavBar>
+                <div className="nav">
+                    <span>账号</span>
+                    <span>开局号</span>
+                </div>
+                <div className="selects">
+                    
+                </div>
+                </div>
             </div>
         )
     }
