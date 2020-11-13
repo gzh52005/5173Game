@@ -1,0 +1,9 @@
+.hist p {
+  padding: 0 1.3333333333vw;
+  margin-top: 2.6666666667vw;
+  font-size: 4vw;
+  color: #666;
+}
+.hist .p1 {
+  border-right: 0.0666666667vw solid #e8e8e8;
+}

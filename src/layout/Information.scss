@@ -1,12 +1,14 @@
 @function vw($px) {
     @return ($px / 750) * 100vw
 };
+.inf{
 
-.am-navbar{
-    height: vw(94) !important;
-    .am-navbar-title{
-        color: #fff !important;
-        font-weight: 900;
+    .am-navbar{
+        height: vw(94) !important;
+        .am-navbar-title{
+            color: #fff !important;
+            font-weight: 900;
+        }
     }
 }
 
