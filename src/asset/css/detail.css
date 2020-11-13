@@ -2,12 +2,22 @@
   height: 100%;
   width: 100%;
 }
+.detail .anticon-vertical-align-top {
+  color: #ccc;
+}
+.detail .ant-back-top-content {
+  background-color: #e6e6e6;
+}
+.detail .ant-back-top {
+  bottom: 26.6666666667vw;
+}
 .detail .header {
   width: 100%;
   position: fixed;
   top: 0;
   display: flex;
   flex-direction: column;
+  z-index: 1000;
 }
 .detail .header .am-navbar {
   height: 12.5333333333vw;
@@ -84,6 +94,7 @@
 .detail .main .listItem .swiper-container {
   height: 42.6666666667vw;
   width: 100%;
+  z-index: 1 !important;
 }
 .detail .main .listItem .swiper-container img {
   width: 100%;
