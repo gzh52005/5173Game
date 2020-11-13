@@ -13,6 +13,7 @@ import Login from './views/login'
 import Reg from './views/reg'
 import MineInfo from './views/MineInfo'
 import Details from './views/details.jsx'
+import search from './views/search'
 import {HomeOutlined,ShoppingCartOutlined,MessageOutlined,UserOutlined,TransactionOutlined,MessageFilled,HomeFilled } from '@ant-design/icons'
 import Order from './views/Order'
 class App extends React.Component {
@@ -88,6 +89,7 @@ class App extends React.Component {
             <Route path='/reg' component={Reg}/>
             <Route path='/details' component={Details}/>
             <Route path='/mineinfo' component={MineInfo}/>
+            <Route path='/search' component={search}/>
             <Redirect path="/" to="/home" exact/>
             <Route path='/order' component={Order}/>
             <Redirect path="/" to="/home" />

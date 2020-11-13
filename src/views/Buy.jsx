@@ -5,6 +5,7 @@ import hot2 from '../asset/image/hot2.png'
 import { SegmentedControl, WingBlank, Tabs, WhiteSpace} from 'antd-mobile';
 import request from '../utils/request';
 import { Menu } from 'antd';
+// import search from './search'
 
 const num1 = <img className="hot" src={hot2}/>
 class Buy extends React.Component{
@@ -22,7 +23,7 @@ class Buy extends React.Component{
     }
     getData=(type,query)=>{
         if(type==1){
-            request.get('/homeApi/5173type',query).then(res=>{
+            request.get('/homeApi/goods/5173type',query).then(res=>{
                 this.setState({
                     data:res.data
                 })
@@ -30,7 +31,7 @@ class Buy extends React.Component{
         }else if(type==2){
             let {data,page} = this.state
             page++
-            request.get('/homeApi/5173type',{
+            request.get('/homeApi/goods/5173type',{
                     query:JSON.stringify({"is_hot":"1", "game_type":`${this.state.type}`,}),
                     page:page,
                     pagesize:15
@@ -96,7 +97,7 @@ class Buy extends React.Component{
     }
 
     componentWillMount(){
-        request.get('/homeApi/5173type',{
+        request.get('/homeApi/goods/5173type',{
             query:JSON.stringify({"is_hot":"1", "game_type":`2`,}),
             page:1,
             pagesize:15
@@ -130,6 +131,11 @@ class Buy extends React.Component{
     handleClick = e => {
         this.setState({ idx: e.key });
     };
+
+    jump =()=>{
+        console.log(1)
+        this.props.history.push('/search')
+    }
     render(){
         let {data,idx} = this.state
         return(
@@ -138,7 +144,7 @@ class Buy extends React.Component{
                     <div className="buytop ">
                         <h1>我要买</h1>
                         <img src={img}/>
-                        <div className="search">搜索游戏</div>
+                        <div className="search" onClick={this.jump}>搜索游戏</div>
                     </div>
                     <WingBlank size="lg" className="sc-example">
                         <SegmentedControl 
