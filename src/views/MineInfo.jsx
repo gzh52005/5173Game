@@ -1,8 +1,9 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback,useEffect} from 'react'
 import HeaderCom from '../components/headerCom'
 import { List, Button, WhiteSpace, WingBlank, Modal } from 'antd-mobile'
 import '../layout/mineinfo.scss'
 import imgs from '../assets/img/tx_nologin.png'
+import {quit} from '../utils/getUser'
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -13,11 +14,13 @@ function MineInfo(props) {
     let [phone, changePhone] = useState('18777747793')
 
     let logout = useCallback(function () {
-        console.log('zhuzzh');
-    })
+        quit()
+        props.history.replace('/mine')
+    },[])
+    
     return (
         <div>
-            <HeaderCom data={{props,title:"用户信息",isselect:false}} />
+            <HeaderCom data={{props,title:"用户信息",isselect:false}}/>
             <List className="my-list">
                 <Item align="middle" className='avatarlist' extra={<img src={imgs} />} arrow="horizontal" multipleLine >
                     头像
