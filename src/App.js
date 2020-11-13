@@ -96,7 +96,7 @@ class App extends React.Component {
             <Redirect path="/" to="/home" exact/>
             <Route path='/order' component={Order}/>
             <Route path='/history' component={History}/>
-            <Redirect path="/" to="/home" />
+            
             </Switch>
             </div>
             <div style={{ width: '100%',height:'50px' }}>

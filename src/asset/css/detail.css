@@ -19,6 +19,9 @@
   flex-direction: column;
   z-index: 1000;
 }
+.detail .header .am-icon {
+  color: #000;
+}
 .detail .header .am-navbar {
   height: 12.5333333333vw;
   background-color: #f6f6f6;
@@ -106,4 +109,23 @@
 .detail .main .listItem .region span {
   font-weight: 900;
   font-size: 4vw;
+}
+.detail .main .listItem .tags {
+  margin-top: 2.6666666667vw;
+  padding-top: 1.3333333333vw;
+  border-top: 1px dashed #ddd;
+}
+.detail .main .listItem .tags .tagTitle {
+  font-weight: 900;
+  font-size: 4vw;
+}
+.detail .main .listItem .tags .tagValue {
+  display: inline-block;
+  height: 8vw;
+  line-height: 8vw;
+  padding: 0 2.1333333333vw;
+  background-color: #ebf3fd;
+  color: #3e86e8;
+  border-radius: 1.3333333333vw;
+  margin: 1.0666666667vw 1.3333333333vw 0 0;
 }
