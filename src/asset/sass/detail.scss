@@ -62,9 +62,22 @@
         .am-search {
             background-color: #c9c9ce;
         }
+        .am-search{
+            height: vw(86) !important;
+            .am-search-input{
+                height: vw(56) !important;
+                .am-search-synthetic-ph-container{
+                    position: relative;
+                    bottom: vw(15);
+                }
+            }
+            .am-search-value{
+                height: vw(56) !important;
+            }
+        }
 
         .am-search-cancel {
-            color: #000;
+            color: #000 !important;
             font-size: vw(28);
         }
     }

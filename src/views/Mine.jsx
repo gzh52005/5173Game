@@ -1,27 +1,39 @@
-import React from 'react'
+import React,{useCallback,useEffect,useState} from 'react'
 import '../layout/Mine.scss'
 import { List } from 'antd-mobile';
 import imgs from '../assets/img/tx_nologin.png'
 import avimgs from '../assets/img/gral-tesy.jpg'
 
 import '../assets/iconfont/iconfont.css'
-import { data, datax } from '../assets/mineData'
+import { datax } from '../assets/mineData'
+
+import {islogin,getUserName} from '../utils/getUser'
 
 const Item = List.Item;
 const Brief = Item.Brief;
-class Mine extends React.Component {
-    mineInfo = () => {
-        console.log(this.props);
-        this.props.history.push('/mineinfo')
-    }
+function Mine (props){
+    let [haslogin,changeHas]=useState('')
+    let [username,changeName]=useState('')
+    let mineInfo =useCallback(function(){
+        console.log(haslogin)
+        if(haslogin){
+            props.history.push('/mineinfo')
+        }else{
+            props.history.push('/login')
+        }
+    })
 
-    render() {
+    useEffect(function(){
+        islogin().then(res=>{
+            changeHas(res)})
+        console.log(haslogin);
+        getUserName().then(res=>{changeName(res)})
+    })
         return (
             <div className='Mine'>
                 <div className='MineTop'>个人中心</div>
                 <List className="my-list">
-                    <Item align="middle" thumb={imgs} arrow="horizontal" multipleLine onClick={this.mineInfo} className='mineAvanter'>
-                        请设置用户昵称 <Brief>ma_aba95an</Brief>
+                    <Item align="middle" thumb={imgs} arrow="horizontal" multipleLine onClick={mineInfo} className='mineAvanter'>{haslogin?username:'注册/登录'}{haslogin?<Brief>ma_aba95an</Brief>:''}
                     </Item>
                 </List>
 
@@ -29,7 +41,7 @@ class Mine extends React.Component {
                     {
                         datax[0].map(items => {
                             return (
-                                <Item  key={items.icon} extra={items.center} arrow="horizontal" onClick={() => {this.props.history.push(items.path)}}>
+                                <Item  key={items.icon} extra={items.center} arrow="horizontal" onClick={() => {props.history.push(items.path)}}>
                                     <div>
                                         <svg className="icon" aria-hidden="true">
                                             <use xlinkHref={items.icon}></use>
@@ -82,7 +94,6 @@ class Mine extends React.Component {
 
             </div>
         )
-    }
 }
 
 export default Mine
