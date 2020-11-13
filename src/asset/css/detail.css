@@ -35,7 +35,8 @@
   background-color: #fff;
   border-top: 1px solid #e8e8e8;
 }
-.detail .header .search, .detail .header .am-search {
+.detail .header .search,
+.detail .header .am-search {
   background-color: #c9c9ce;
 }
 .detail .header .am-search-cancel {
@@ -56,4 +57,42 @@
 .detail .main .mainTop img {
   width: 100%;
   height: 22.4vw;
+}
+.detail .main .listItem {
+  padding: 5.3333333333vw;
+  background-color: #fff;
+  margin-bottom: 2.6666666667vw;
+}
+.detail .main .listItem p {
+  margin-bottom: 1.3333333333vw;
+}
+.detail .main .listItem .title {
+  font-weight: 900;
+  font-size: 4.8vw;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.detail .main .listItem .price {
+  color: #ff6600;
+  font-size: 5.3333333333vw;
+}
+.detail .main .listItem .price span {
+  font-size: 6.6666666667vw;
+}
+.detail .main .listItem .swiper-container {
+  height: 42.6666666667vw;
+  width: 100%;
+}
+.detail .main .listItem .swiper-container img {
+  width: 100%;
+  height: 100%;
+}
+.detail .main .listItem .region {
+  margin-top: 2.6666666667vw;
+}
+.detail .main .listItem .region span {
+  font-weight: 900;
+  font-size: 4vw;
 }
