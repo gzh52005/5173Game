@@ -133,7 +133,6 @@ class Buy extends React.Component{
     };
 
     jump =()=>{
-        console.log(1)
         this.props.history.push('/search')
     }
     render(){
