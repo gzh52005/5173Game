@@ -1,6 +1,7 @@
 import React from 'react'
 import '../asset/sass/detail.scss'
 import { NavBar, Icon, SearchBar, List } from 'antd-mobile';
+import { BackTop } from 'antd';
 import data from './app.json';
 import Swiper from 'swiper';
 import 'swiper/swiper.scss';
@@ -56,6 +57,7 @@ class Details extends React.Component {
        
         return (
             <div className="detail">
+                 
                 <div className="header">
                     <NavBar
                         mode="light"
@@ -89,7 +91,10 @@ class Details extends React.Component {
                         />
                     </div>
                 </div>
-                <div className="main">
+                <div className="main" ref="main">
+                <BackTop visibilityHeight={1000} target={()=>(
+                    this.refs.main
+                )}/>
                     <div className="mainTop">
                         {/* <List renderHeader={() => 'Subtitle'} className="my-list">
                                 <Item arrow="horizontal" multipleLine onClick={() => {}}>
@@ -104,7 +109,9 @@ class Details extends React.Component {
                     </div>
                    
                     {this.state.dataList.map((item, index) => (
-                        <div className="listItem" key={index}>
+                        <div className="listItem" key={index} onClick={()=>{
+                            this.props.history.push('/onedetail/'+item.id)
+                        }}>
                             <p className="title">{item.title}</p>
                              <p className="price">￥<span>{item.price}</span></p>
                             <div className="swiper-container">

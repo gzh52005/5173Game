@@ -5,13 +5,23 @@
 .detail {
     height: 100%;
     width: 100%;
+    .anticon-vertical-align-top{
+        color: #ccc;
+    }
+      .ant-back-top-content{
+        background-color:#e6e6e6;
 
+      }
+      .ant-back-top{
+        bottom: vw(200);
+      }
     .header {
         width: 100%;
         position: fixed;
         top: 0;
         display: flex;
         flex-direction: column;
+        z-index: 1000;
 
         .am-navbar {
             height: vw(94);
@@ -100,6 +110,7 @@
             .swiper-container {
                 height: vw(320);
                 width: 100%;
+                z-index: 1 !important;
                 // // --swiper-navigation-color: #00ff33;/* 单独设置按钮颜色 */
                 // // --swiper-navigation-size: 30px;/* 设置按钮大小 */
                 // .swiper-pagination{
