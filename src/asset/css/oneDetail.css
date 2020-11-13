@@ -1,0 +1,45 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+.header .am-navbar {
+  height: vw(94);
+  background-color: #f6f6f6;
+}
+.header .am-navbar .am-navbar-title {
+  color: #000 !important;
+  font-weight: 100;
+}
+.header .nav {
+  display: flex;
+  height: vw(76);
+  background-color: #fff;
+}
+.header .nav span {
+  color: #999;
+  margin: 0 vw(24);
+  line-height: vw(76);
+}
+.header .active {
+  color: #ff6600;
+}
+.header .selects {
+  height: vw(86);
+  background-color: #fff;
+  border-top: 1px solid #e8e8e8;
+}
+.header .search,
+.header .am-search {
+  background-color: #c9c9ce;
+}
+.header .am-search-cancel {
+  color: #000;
+  font-size: vw(28);
+}
+.header .am-icon {
+  color: #000;
+}

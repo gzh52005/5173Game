@@ -1,12 +1,15 @@
 import React from 'react'
 import '../asset/sass/detail.scss'
-import { NavBar, Icon, SearchBar, List } from 'antd-mobile';
+import { NavBar, Icon, SearchBar, List ,Tag} from 'antd-mobile';
 import { BackTop } from 'antd';
 import data from './app.json';
 import Swiper from 'swiper';
 import 'swiper/swiper.scss';
  data.Data.hits.forEach(item=>{
-  item['img']=JSON.parse(item.imagePathInfos)
+  item['img']=JSON.parse(item.imagePathInfos);
+    if(item.productTags){
+    item['tags']=JSON.parse(item.productTags)
+    }
 });
 class Details extends React.Component {
     state = {
@@ -125,6 +128,10 @@ class Details extends React.Component {
                                 <div className="swiper-button-next"></div>
                             </div>
                                     <p className="region"><span >所属区服</span>&ensp;&ensp;{item.gameServerName ?item.gameServerName:'全区全服'}</p>
+                                    {item.tags?<p className="tags"><span className="tagTitle">商品标签</span>&ensp;&ensp;{item.tags.map((tag,idx)=>(
+                                        <span key={idx} className="tagValue">{tag.Value}</span>
+                                        // <Tag disabled key={idx}>{tag.Value}</Tag>
+                                    ))}</p>:''}
                         </div>
                     ))}
                 </div>

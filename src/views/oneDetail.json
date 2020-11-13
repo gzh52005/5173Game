@@ -1,0 +1,147 @@
+{
+    "ResultCode": 200,
+    "Message": "接口调用成功",
+    "Data": {
+        "couponInfo": null,
+        "isOwn": false,
+        "lineState": false,
+        "offLineSeconds": -1,
+        "id": "SY-ZH046-20201111-40851886",
+        "title": "脱坑甩卖，110全是高质量皮肤",
+        "accountTradeCount": 0,
+        "goodsType": 6,
+        "gameName": "王者荣耀",
+        "getPlatName": "安卓",
+        "operatorName": "微信(安卓)",
+        "gameServerName": "微信170区 生化警戒",
+        "gameId": "76bae5aefec047e89bcb6aa4e417f138",
+        "categoryId": "91831dc2fe6a42de8fc5cbe16168ae6e",
+        "categoryName": "帐号",
+        "gamePlatformId": "5c3c40536c6e4c359244e1107074e7f4",
+        "operatorId": "2103bdc2a98d48df98269cf6220899e7",
+        "gameServerId": "0835d6b9c5b94a18b8b220376ce798d6",
+        "bizCategoryPropertyList": [
+            {
+                "id": "d643ccbb25e34246bca8451cb961c5cd",
+                "name": "强势英雄",
+                "value": "武则天",
+                "filedName": "BCP4",
+                "unitName": null
+            },
+            {
+                "id": "228d260ba8a641b7b53391ac71cc8439",
+                "name": "稀有皮肤",
+                "value": "杀手不太冷,全息碎影",
+                "filedName": "BCP7",
+                "unitName": null
+            },
+            {
+                "id": "f106843a77374ca59c2926ec9b81c9ca",
+                "name": "帐号绑定",
+                "value": "密保手机",
+                "filedName": "BCP10",
+                "unitName": null
+            },
+            {
+                "id": "5ea0c26b73254d9697dfa4e2a65f6008",
+                "name": "英雄个数",
+                "value": "101",
+                "filedName": "BCP5",
+                "unitName": "个"
+            },
+            {
+                "id": "7fa5af57a595480b87ae0e17b3734cc8",
+                "name": "皮肤个数",
+                "value": "110",
+                "filedName": "BCP6",
+                "unitName": "个"
+            },
+            {
+                "id": "d3c219e41a4b46e78c956272663be7ad",
+                "name": "5级铭文个数",
+                "value": "300",
+                "filedName": "BCP1",
+                "unitName": ""
+            },
+            {
+                "id": "ad6ed900a86a45908d9e938bd9d4efe3",
+                "name": "守护平台绑定",
+                "value": "绑定",
+                "filedName": "BCP3",
+                "unitName": null
+            }
+        ],
+        "securityLevel": 3,
+        "publishStatus": 2,
+        "description": "武则天，倪克斯神谕，幻海之心，无限飓风号，杀手不太冷，大秦宣太后，全息碎影，大圣娶亲，云霓雀翎，嬴政白昼王子，天魔缭乱，武陵仙君，青龙志，苍穹之光，如梦令，玄嵩，黄金白羊座，箭雨风息，魔法小厨娘，逐梦之光，暗夜猫娘，星夜王子，幽灵船长，死神来了，功夫厨神，逐浪之夏，地狱岩魂，德古拉伯爵，刘禅绅士熊猫，电玩小子，龙骑士，偶像歌手，缤纷独角兽，心灵战警，冰冠公主等等等等。。。战令皮肤战队全有，体验卡等道具无数",
+        "price": 5888,
+        "imgs": [
+            {
+                "thumbnailsUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t59sAAAAAAAB76HgpTcU25.jpg",
+                "originalUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t59sAAAAAAAQjeSfky-o70.jpg"
+            },
+            {
+                "thumbnailsUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t590AAAAAAACPggQNuQw75.jpg",
+                "originalUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t590AAAAAAAUF7l0E7uc60.jpg"
+            },
+            {
+                "thumbnailsUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t590AAAAAAAB98AhVrcY02.jpg",
+                "originalUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t590AAAAAAARORk1rYF097.jpg"
+            },
+            {
+                "thumbnailsUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t594AAAAAAAB8QzsXFFI59.jpg",
+                "originalUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t594AAAAAAARIpllqOz883.jpg"
+            },
+            {
+                "thumbnailsUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t594AAAAAAACH9UaWXIM16.jpg",
+                "originalUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t594AAAAAAATSO1u6Znk10.jpg"
+            },
+            {
+                "thumbnailsUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t598AAAAAAACODlhutKQ91.jpg",
+                "originalUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t594AAAAAAAR_8TSeglY86.jpg"
+            },
+            {
+                "thumbnailsUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t598AAAAAAACFb3d9Fmc02.jpg",
+                "originalUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t598AAAAAAARLLhhrezE34.jpg"
+            },
+            {
+                "thumbnailsUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t5-AAAAAAAACF4DSiQCc16.jpg",
+                "originalUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t598AAAAAAARNiypbHYU06.jpg"
+            },
+            {
+                "thumbnailsUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t5-EAAAAAAAB44UsQ65847.jpg",
+                "originalUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t5-EAAAAAAAQYShCVU7422.jpg"
+            },
+            {
+                "thumbnailsUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t5-IAAAAAAABtYUp7Cz849.jpg",
+                "originalUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t5-IAAAAAAANX8QZA7t078.jpg"
+            },
+            {
+                "thumbnailsUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t5-MAAAAAAAB99X4wm9I67.jpg",
+                "originalUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t5-IAAAAAAAOp2AlS4Tk73.jpg"
+            },
+            {
+                "thumbnailsUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t5-cAAAAAAACSbnZ5Zk023.jpg",
+                "originalUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t5-YAAAAAAAWOzAw1ki861.jpg"
+            },
+            {
+                "thumbnailsUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t5-cAAAAAAAB8dSSrDYA80.jpg",
+                "originalUrl": "https://bo.5173cdn.com/bizoffer/data/202011/01/DB/RQKowF-t5-cAAAAAAAPzw3xwnF829.jpg"
+            }
+        ],
+        "bizOfferFlag": "v!",
+        "stockTotal": 1,
+        "sellerId": null,
+        "tradingServiceType": 0,
+        "unit": 0,
+        "unitName": null,
+        "sourceChannel": 2,
+        "firstHandPrice": 0,
+        "discount": 10,
+        "productTags": "武则天,猪年限定,6水晶",
+        "publishTime": "2020-11-13T09:57:11.287",
+        "rateId": null,
+        "sellerSafeValueDays": 0,
+        "rent": null
+    }
+}

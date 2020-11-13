@@ -1,0 +1,65 @@
+@function vw($px) {
+    @return ($px/750)*100vw;
+}
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+
+    .am-navbar {
+        height: vw(94);
+        background-color: #f6f6f6;
+
+        .am-navbar-title {
+            color: #000 !important;
+            font-weight: 100;
+        }
+    }
+
+    .nav {
+        display: flex;
+        height: vw(76);
+        background-color: #fff;
+
+        span {
+            color: #999;
+            margin: 0 vw(24);
+            line-height: vw(76);
+        }
+    }
+
+    .active {
+        color: #ff6600;
+    }
+
+    .selects {
+        height: vw(86);
+        background-color: #fff;
+        border-top: 1px solid #e8e8e8;
+    }
+
+    .search,
+    .am-search {
+        background-color: #c9c9ce;
+    }
+
+    .am-search-cancel {
+        color: #000;
+        font-size: vw(28);
+    }
+    .am-icon{
+        color: #000;
+    }
+}
+.banner{
+    margin-top: vw(94);
+    width: 100%;
+    height: vw(422);
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
