@@ -14,3 +14,67 @@
     
     }
 }
+.hist{
+    .hisMain{
+        margin-top: vw(28) !important;
+        .histul{
+            background-color: #fff;
+            h1{
+                height: vw(86);
+                line-height: vw(86);
+                margin: 0;
+                font-size: vw(27);
+                color: #666;
+                padding-left: vw(30);
+            }
+            li{
+                padding: vw(28) 0 vw(28) vw(30);
+                border-top:vw(2) solid #e8e8e8;
+                height: vw(210);
+                .img1{
+                    float: left;
+                    margin: 0;
+                    width: vw(170);
+                    height:vw(145);
+                    overflow: hidden;
+                    img{
+                        width: vw(300);
+                        height: 100%;
+                        // transform: scale(1.1);
+                     
+                    }
+                }
+                .conp{
+                    float: left;
+                    width: vw(520);
+                    overflow: hidden;
+                    padding-left: vw(20);
+                    span{
+                        display: block;
+                        
+                    }
+                   
+                    :nth-of-type(1){
+                        overflow: hidden;
+                        height: vw(40);
+                        color: #000;
+                        font-size: vw(30);
+                    }
+                    :nth-of-type(2){
+                        color: #FF6600;
+                        font-size: vw(31);
+                        font-weight: 700;
+                    }
+                    :nth-of-type(3){
+                        color: #666;
+                        font-size: vw(24);
+                    }
+        
+                }
+        
+               
+            }
+        }
+    }
+}
+
