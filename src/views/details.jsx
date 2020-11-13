@@ -2,31 +2,39 @@ import React from 'react'
 import '../asset/sass/detail.scss'
 import { NavBar, Icon, SearchBar, List ,Tag} from 'antd-mobile';
 import { BackTop } from 'antd';
-import data from './app.json';
 import Swiper from 'swiper';
 import 'swiper/swiper.scss';
- data.Data.hits.forEach(item=>{
-  item['img']=JSON.parse(item.imagePathInfos);
-    if(item.productTags){
-    item['tags']=JSON.parse(item.productTags)
-    }
-});
+import request from '../utils/request';
+
 class Details extends React.Component {
     state = {
         value: '',
         title: '',
-        dataList: data.Data.hits,
+        dataList: [],
         // swiper:''
       
     }
     
     componentDidMount() {
-        console.log(this.props);
         this.setState({
-            title: this.props.location.pathname.substring(9),
+            title: this.props.location.pathname.split('/'),
 
         })
-        console.log('componentDidMount', this.state.dataList);
+            request.get('/homeApi/goods/5173list',{
+                query:JSON.stringify({"gameId":this.state.title[3]}),
+                page:1,
+                pagesize:15
+            }).then(res=>{
+                res.data.forEach(item=>{
+                    item['img']=JSON.parse(item.imagePathInfos);
+                        if(item.productTags){
+                        item['tags']=JSON.parse(item.productTags)
+                        }
+                })
+                this.setState({
+                    dataList:res.data
+                })
+            })
         if(this.swiper){
             this.swiper.slideTo(0, 0)
             this.swiper.destroy()
@@ -70,7 +78,7 @@ class Details extends React.Component {
                             <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
                             <Icon key="1" type="ellipsis" />,
                         ]}
-                    >{this.state.title}</NavBar>
+                    >{this.state.title[2]}</NavBar>
                     <div className="nav" >
                         <span className="phone" >账号</span>
                         <span className="open" >开局号</span>

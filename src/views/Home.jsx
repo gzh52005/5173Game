@@ -186,7 +186,9 @@ class Home extends React.Component {
                     >
                         <div className="tagsChildren">
                             <Grid data={data} hasLine={false} square={false} onClick={(el) => {
-                                this.props.history.push('/details/'+el.text)
+                                console.log(el);
+                                
+                                this.props.history.push('/details/'+el.text+'/'+el.catagoryId)
                             }} />
                         </div>
                         <div className="tagsChildren">
