@@ -10,11 +10,6 @@
     clear: both;
     overflow: hidden;
 }
-// .buybox{
-//     width: 100%;
-//     height: vw(200);
-    
-// }
 .buytop{
     background: #f60;
     padding: vw(12) vw(0);
@@ -57,4 +52,34 @@
     font-size: 16px;
     color: #000;
     border: 1PX solid #F8F8F8
+}
+.sell_main{
+    width: 100%;
+  
+  ul{
+      height: 100%;
+      overflow-y: auto;
+      background-color: #fff;
+      li{
+          float: left;
+          height: vw(240);
+          width: vw(212.84);
+          overflow: hidden;
+          text-align: center;
+          padding: vw(20) 0;
+          img{
+            width: vw(138.66);
+            border-radius: vw(20);
+        }
+        p{
+            width: 100%;
+            height: vw(48);
+            font-size: vw(26);
+            overflow: hidden;
+            padding-top: vw(10);
+        }
+       
+      }
+  }
+    
 }
