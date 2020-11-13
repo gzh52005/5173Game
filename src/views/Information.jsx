@@ -8,7 +8,7 @@ import { Icon } from 'antd-mobile';
 
 function Information(){
     return(
-        <div>
+        <div className="inf">
              <NavBar
                 style={{background:"#F60",color:"#FFF"}}
                 mode="light"

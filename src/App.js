@@ -14,6 +14,8 @@ import Reg from './views/reg'
 import MineInfo from './views/MineInfo'
 import Details from './views/details.jsx'
 import search from './views/search'
+import History from './views/history'
+import OneDetail from './views/OneDetail.jsx'
 import {HomeOutlined,ShoppingCartOutlined,MessageOutlined,UserOutlined,TransactionOutlined,MessageFilled,HomeFilled } from '@ant-design/icons'
 import Order from './views/Order'
 class App extends React.Component {
@@ -90,8 +92,10 @@ class App extends React.Component {
             <Route path='/details' component={Details}/>
             <Route path='/mineinfo' component={MineInfo}/>
             <Route path='/search' component={search}/>
+            <Route path='/onedetail' component={OneDetail}/>
             <Redirect path="/" to="/home" exact/>
             <Route path='/order' component={Order}/>
+            <Route path='/history' component={History}/>
             <Redirect path="/" to="/home" />
             </Switch>
             </div>

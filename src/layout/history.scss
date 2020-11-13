@@ -1,0 +1,16 @@
+@function vw($px) {
+    @return ($px / 750) * 100vw
+};
+
+.hist{
+    p{
+        padding:0 vw(10);
+        margin-top: vw(20);
+        font-size: vw(30);
+        color: #666;
+    }
+    .p1{
+        border-right: vw(0.5) solid #e8e8e8;
+    
+    }
+}

@@ -63,7 +63,8 @@
 }
 .sell_main ul li {
   float: left;
-  width: 28.3786666667vw;
+  width: 28vw;
+  height: 33.3333333333vw;
   overflow: hidden;
   text-align: center;
   padding: 2.6666666667vw 0;
