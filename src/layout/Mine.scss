@@ -69,9 +69,15 @@
 }
 .am-list-content{
     div{
+        display: flex;
+        svg{
+            padding-left: vw(20);
+            font-size: vw(60);
+        }
         span{
             padding:0 vw(20);
             font-size: vw(27);
+           padding-top: vw(10);
         }
     }
 }
@@ -88,7 +94,7 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            font-size: vw(16) !important;
+            font-size: vw(20) !important;
         }
     }
 }
