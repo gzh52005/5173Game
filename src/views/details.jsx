@@ -1,7 +1,7 @@
 import React from 'react'
 import '../asset/sass/detail.scss'
 import { NavBar, Icon, SearchBar, List ,Tag} from 'antd-mobile';
-import { BackTop } from 'antd';
+import { BackTop,Drawer, Button } from 'antd';
 import Swiper from 'swiper';
 import 'swiper/swiper.scss';
 import request from '../utils/request';
@@ -12,7 +12,8 @@ class Details extends React.Component {
         title: '',
         dataList: [],
         page:1,
-        flag:false
+        flag:false,
+        visible:false
         // swiper:''
       
     }
@@ -106,11 +107,24 @@ class Details extends React.Component {
     clear = () => {
         this.setState({ value: '' });
     };
+
+    showDrawer = ()=>{
+        this.setState({
+            visible:true
+        })
+    }
+    onClose = ()=>{
+        this.setState({
+            visible:false
+        })
+    }
+
+
+    
     render() {
         const Item = List.Item;
         const Brief = Item.Brief;
-       console.log(this.state.title);
-       
+
         return (
             <div className="detail">
                  
@@ -129,6 +143,28 @@ class Details extends React.Component {
                         <span className="open" >开局号</span>
                     </div>
                     <div className="selects">
+                            <div style={{display:"flex",justifyContent:"space-around",alignItems:"center"}}>
+                                <p onClick={this.showDrawer}>服务器</p>
+                                <p>保障服务</p>
+                                <p>价格区间</p>
+                                <p>精准筛选</p>
+                            </div>
+                        <Drawer
+                            title="Basic Drawer"
+                            placement="top"
+                            closable={false}
+                            onClose={this.onClose}
+                            visible={this.state.visible}
+                            getContainer={this.refs.main}
+                        >
+                            <p>Some contents...</p>
+                            <p>Some contents...</p>
+                            <p>Some contents...</p>
+                        </Drawer>
+
+
+
+
 
                     </div>
                     <div className="search">
