@@ -125,7 +125,7 @@ class Home extends React.Component {
             <div className="home">
                 <div className="header">
                     <img src="https://m.5173.com/dist/src/assets/images/logo.png?24e48c4074867d3ef7a63e4ce572ca4b" alt="" />
-                    <div className='search'><span>搜索游戏</span></div>
+                    <div className='search' onClick={()=>this.props.history.push('/search')}><span>搜索游戏</span></div>
                     <div className="right"><DesktopOutlined className="icon" />电脑版</div>
                 </div>
                 <div className="banner">

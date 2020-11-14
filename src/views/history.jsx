@@ -31,6 +31,8 @@ class History extends React.Component{
         
     }
     render(){
+        console.log(this.props);
+        
         console.log(moment);
         const {data} = this.state
 
@@ -38,7 +40,7 @@ class History extends React.Component{
             <div className="hist">
                    <NavBar
                         mode="light"
-                        icon={<Icon type="left" color="#333" size="md" />}
+                        icon={<Icon type="left" color="#333" size="md" onClick={()=>this.props.history.go(-1)} />}
                         rightContent={[
                             <p key="0" className="p1">清空</p>,
                             <p key="1">编辑</p>,

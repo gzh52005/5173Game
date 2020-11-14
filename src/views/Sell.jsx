@@ -95,7 +95,7 @@ getData=(type,query)=>{
 
     goto = (path,data)=>{
         this.props.history.push({
-            pathname:path+'/'+data.name,
+            pathname:path+'/'+data.name+'/'+data.id,
         })
     }
     componentWillMount(){
@@ -148,7 +148,7 @@ getData=(type,query)=>{
                     <div className="selltop clear">
                             <h1>我要卖</h1>
                             <img src={img}/>
-                            <div className="search">搜索游戏</div>
+                            <div className="search" onClick={()=>this.props.history.push('/search')}>搜索游戏</div>
                     </div>
                     
                     <WingBlank size="lg" className="sc-example">
