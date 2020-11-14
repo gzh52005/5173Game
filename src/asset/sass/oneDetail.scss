@@ -65,4 +65,73 @@
             height: 100%;
         }
     }
+    .description{
+        background-color: #fff;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: vw(26) vw(28);
+        .titleAPrice{
+            p{
+                font-size: vw(32);
+            }
+            span{
+                color: #ff6600;
+            }
+        }
+        .share{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .zhbp{
+        height: vw(80);
+        display: flex;
+        padding: 0 vw(30);
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f8f8f8;
+        
+    }
+    .am-action-sheet-button-list-item{
+         color: #ff6600;   
+    }
+    .goodsDetail{
+        .am-tabs-default-bar-tab{
+            background-color: #f8f8f8 !important;
+        }
+        .am-tabs-default-bar-tab-active{
+            background-color:#fff !important;
+        }
+    }
+    .my-list{
+        .am-list-line{
+            padding:0  vw(30);
+            height: vw(104);
+        }
+        .am-list-content{
+            color: #666 !important;
+        }
+        .am-list-extra{
+            font-size: vw(30) !important;
+            text-align: left !important;
+        }
+    }
+    .miaoshu{
+        display: flex;
+        padding: vw(28) vw(30);
+        justify-content: space-between;
+        width: 100%;
+        background-color: #fff;
+        margin-bottom: vw(30);
+        div{
+            width: vw(120);
+            font-size: vw(30);
+            color: #666
+        }
+        p{
+            width: vw(484);
+            font-size: vw(28);
+        }
+    }
 }
