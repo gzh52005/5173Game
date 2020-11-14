@@ -4,6 +4,7 @@ import '../layout/base.css'
 import { message } from 'antd';
 import {Toast} from 'antd-mobile'
 import request from '../utils/request'
+import HeaderCom from '../components/headerCom'
 
 
 class Reg extends React.Component {
@@ -64,9 +65,11 @@ class Reg extends React.Component {
         }
     }
     render() {
+        console.log(this.props);
+        let props=this.props
         return (
             <div className='login'>
-                <header className='loginHead'>5173免费注册</header>
+                <HeaderCom data={{props,title:"5173用户注册",isselect:false}}/>
                 <form className='loginFrom' >
                     <p>
                         <label htmlFor="username">用户名</label>
