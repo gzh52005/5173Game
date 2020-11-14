@@ -105,7 +105,7 @@ componentWillReceiveProps(newp){
             </Switch>
             </div>
             {  
-                /^\/details/.test(path)||  /^\/search/.test(path) ||  /^\/login/.test(path)||/^\/history/.test(path) || /^\/onedetail/.test(path)?'': <div style={{ width: '100%',height:'50px' }}>
+                /^\/details/.test(path)||  /^\/search/.test(path) ||  /^\/login/.test(path)||/^\/history/.test(path) || /^\/onedetail/.test(path)|| /^\/reg/.test(path)?'': <div style={{ width: '100%',height:'50px' }}>
                 <TabBar
                 unselectedTintColor="#949494"
                 tintColor="#ff6600"
@@ -136,3 +136,10 @@ componentWillReceiveProps(newp){
 
   App = withRouter(App)
 export default App;
+
+
+
+
+
+
+      
