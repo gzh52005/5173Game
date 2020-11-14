@@ -11,30 +11,49 @@ class Details extends React.Component {
         value: '',
         title: '',
         dataList: [],
+        page:1,
+        flag:false
         // swiper:''
       
     }
     
-    componentDidMount() {
-        this.setState({
-            title: this.props.location.pathname.split('/'),
-
-        })
-            request.get('/homeApi/goods/5173list',{
-                query:JSON.stringify({"gameId":this.state.title[3]}),
-                page:1,
-                pagesize:15
-            }).then(res=>{
+    getData = (type)=>{
+        request.get('/homeApi/goods/5173list',{
+            query:JSON.stringify({"gameId":`${this.state.title[3]}`}),
+            page:this.state.page,
+            pagesize:15
+        }).then(res=>{
+            if(res.flag){
+                this.setState({
+                    page:this.state.page+1
+                })
                 res.data.forEach(item=>{
                     item['img']=JSON.parse(item.imagePathInfos);
                         if(item.productTags){
                         item['tags']=JSON.parse(item.productTags)
                         }
                 })
-                this.setState({
-                    dataList:res.data
-                })
-            })
+                if(type==1){
+                    this.setState({
+                        dataList:res.data
+                    })
+                }else{
+                    this.setState({
+                        flag:false,
+                        dataList:this.state.dataList.concat(res.data)
+                    })
+                }
+            }
+      
+           
+        })
+    }
+    componentDidMount() {
+        this.setState({
+            title: this.props.location.pathname.split('/'),
+        },()=>{
+            this.getData(1)
+        })
         if(this.swiper){
             this.swiper.slideTo(0, 0)
             this.swiper.destroy()
@@ -56,6 +75,31 @@ class Details extends React.Component {
             },
         });
     }
+
+    shouldComponentUpdate(newprops,newstate){
+        console.log(newstate);
+        
+        if(this.state.flag != newstate.flag){
+            this.getData(2)
+            return true
+        }else if(this.state.page==2){
+            return true
+        }else if(newstate.title != this.state.title){
+            return true
+        }
+         else{
+            return false
+        }
+    }
+
+    onScroll = (scroll)=>{
+        if(scroll.target.scrollTop +scroll.target.clientHeight>=scroll.target.scrollHeight){
+                this.setState({
+                    flag:true
+                })
+        }
+    }   
+
     onChange = (value) => {
         this.setState({ value });
     };
@@ -65,6 +109,7 @@ class Details extends React.Component {
     render() {
         const Item = List.Item;
         const Brief = Item.Brief;
+       console.log(this.state.title);
        
         return (
             <div className="detail">
@@ -102,7 +147,7 @@ class Details extends React.Component {
                         />
                     </div>
                 </div>
-                <div className="main" ref="main">
+                <div className="main" ref="main" onScroll={this.onScroll.bind(this)}>
                 <BackTop visibilityHeight={1000} target={()=>(
                     this.refs.main
                 )}/>

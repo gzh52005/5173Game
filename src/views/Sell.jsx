@@ -21,38 +21,37 @@ class Sell extends React.Component{
     }
 getData=(type,query)=>{
     if(type==1){
+        this.setState({
+            page:1
+        })
         request.get('/homeApi/goods/5173type',query).then(res=>{
             this.setState({
-                data:res.data
+                data:res.data,
+                page:this.state.page+1
             })
          })
     }else if(type==2){
-        let {data,page} = this.state
-        page++
-        request.get('/homeApi/goods/5173type',{
-                query:JSON.stringify({"is_hot":"1", "game_type":`${this.state.type}`,}),
+        this.setState({
+            page:this.state.page+1
+        })
+            let {data,page} = this.state
+            request.get('/homeApi/goods/5173type',{
+                query:JSON.stringify({"is_hot":"1", "game_type":`${this.state.type}`}),
                 page:page,
                 pagesize:15
             }).then(res=>{
-            if(res.data){
-                data.push(...res.data)
+               if(res.flag){
                 this.setState({
-                    data,
+                    data:this.state.data.concat(res.data),
                     flag:false,
-                    page:page
                 })
-            }else{
-                this.setState({
-                    flag:true
-                })
-            }
+               }
          })
     }
-
 }
     onChange=(e)=>{     
   
-           e.target.scrollTop=0
+        e.target.scrollTop=0
         if(e.nativeEvent.selectedSegmentIndex==0){
             this.setState({
                 num:e.nativeEvent.selectedSegmentIndex,
@@ -60,11 +59,13 @@ getData=(type,query)=>{
                 type:2,
                 flag:false,
                 current:"0"
+            },()=>{
+                this.getData(1,{
+                    query:JSON.stringify({"is_hot":"1", "game_type":"2"}),
+                    page:1,
+                    pagesize:15})
             })
-            this.getData(1,{
-                query:JSON.stringify({"is_hot":"1", "game_type":"2"}),
-                page:1,
-                pagesize:15})
+          
         }else if(e.nativeEvent.selectedSegmentIndex==1){
             this.setState({
                 num:e.nativeEvent.selectedSegmentIndex,
@@ -72,29 +73,24 @@ getData=(type,query)=>{
                 type:1,
                 flag:false,
                 current:"0"
+            },()=>{
+                this.getData(1,{
+                    query:JSON.stringify({"is_hot":"1", "game_type":"1"}),
+                    page:1,
+                    pagesize:15})
             })
-            this.getData(1,{
-                query:JSON.stringify({"is_hot":"1", "game_type":"1"}),
-                page:1,
-                pagesize:15})
         }
     }
     // 滚动条事件
-    onScroll = (scroll)=>{
-        if(scroll.target.scrollTop +scroll.target.clientHeight>=scroll.target.scrollHeight){
+    onScroll1 = (scroll)=>{
+        if(scroll.target.scrollTop +scroll.target.clientHeight+20>=scroll.target.scrollHeight){
             this.setState({
-                // flag:flas,
-                page:this.state.page+1
+                flag:true,
             })
-            this.getData(2)
         }
     }
     handleClick = e => {
         this.setState({ current: e.key});
-        // this.getData(1,{
-        //     query:JSON.stringify({"is_hot":"1", "game_type":`${this.state.type}`}),
-        //     page:1,
-        //     pagesize:15})
       };
 
     goto = (path,data)=>{
@@ -109,35 +105,38 @@ getData=(type,query)=>{
             pagesize:15
         }).then(res=>{
             this.setState({
-                data:res.data
+                data:res.data,
+                page:this.state.page+1
             })
         })
     }
     firs = (e)=>{
         this.setState({
             page:1
+        },()=>{
+            if(e.type=='img'){
+                this.getData(1,{
+                    query:JSON.stringify({"is_hot":"1", "game_type":`${this.state.type}`}),
+                    page:1,
+                    pagesize:15})
+            }else{
+                this.getData(1,{query:JSON.stringify({"first_py":e, "game_type":`${this.state.type}`})})
+            }
         })
-        if(e.type=='img'){
-            this.getData(1,{
-                query:JSON.stringify({"is_hot":"1", "game_type":`${this.state.type}`}),
-                page:1,
-                pagesize:15})
-        }else{
-            this.getData(1,{query:JSON.stringify({"first_py":e, "game_type":`${this.state.type}`})})
+     
+    }
+    shouldComponentUpdate(newprops,newstate){
+        let {flag,page} = this.state
+        if(newstate.flag != this.state.flag ){
+                this.getData(2)
+            return true
+        }else if(newstate.page!=page){
+            return true
+        }
+        else{
+            return false
         }
     }
-    // shouldComponentUpdate(newprops,newstate){
-    //     console.log(newstate);
-    //     console.log(this.state.page);
-        
-        
-    //     let {flag} = this.state
-    //     if(newstate.flag != flag){
-    //         this.getData(2)
-    //         return true
-    //     }
-    //     return true
-    // }
    
     render(){
         const { current } = this.state;
@@ -162,7 +161,7 @@ getData=(type,query)=>{
                 </div>
                 <div style={{overflow:"hidden",flex:"1",display:"flex",justifyContent:"space-between"}}>
                     <div className="sell_main">
-                        <ul onScroll={this.onScroll.bind(this)}>
+                        <ul onScroll={this.onScroll1.bind(this)}>
                             {data?data.map((item,index)=>(<li key={index} onClick={this.goto.bind(null,'/details',item)}>
                                 <img src={item.game_image_url} alt=""/>
                             <p>{item.name}</p>
