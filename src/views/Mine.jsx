@@ -15,12 +15,13 @@ function Mine (props){
     let [haslogin,changeHas]=useState('')
     let [username,changeName]=useState('')
     let mineInfo =useCallback(function(){
+        console.log(haslogin);
         if(haslogin){
             props.history.push('/mineinfo')
         }else{
             props.history.push('/login')
         }
-    },[])
+    })
 
     useEffect(function(){
         islogin().then(res=>{

@@ -17,7 +17,7 @@ function MineInfo(props) {
         quit()
         props.history.replace('/mine')
     },[])
-    
+    console.log(name);
     return (
         <div>
             <HeaderCom data={{props,title:"用户信息",isselect:false}}/>
