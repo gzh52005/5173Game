@@ -23,7 +23,8 @@ export let datax=[
         },
         {
             title:'浏览记录',
-            icon:'#icon-liulanjilu'
+            icon:'#icon-liulanjilu',
+            path:'/history'
         },
         {
             title:'我的红包',
