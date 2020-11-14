@@ -56,6 +56,9 @@
             color: #000;
         }
     }
+    .main{
+        overflow-y: auto;
+        margin-bottom: vw(96);
     .banner{
         margin-top: vw(94);
         width: 100%;
@@ -63,6 +66,140 @@
         img{
             width: 100%;
             height: 100%;
+        }
+    }
+    .description{
+        background-color: #fff;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: vw(26) vw(28);
+        .titleAPrice{
+            p{
+                width: vw(614);
+                font-size: vw(32);
+            }
+            span{
+                color: #ff6600;
+            }
+        }
+        .share{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .zhbp{
+        height: vw(80);
+        display: flex;
+        padding: 0 vw(30);
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f8f8f8;
+        
+    }
+    .am-action-sheet-button-list-item{
+         color: #ff6600;   
+    }
+    .goodsDetail{
+        .am-tabs-default-bar-tab{
+            background-color: #f8f8f8 !important;
+        }
+        .am-tabs-default-bar-tab-active{
+            background-color:#fff !important;
+        }
+    }
+    .my-list{
+        .am-list-line{
+            padding:0  vw(30);
+            height: vw(104);
+        }
+        .am-list-content{
+            color: #666 !important;
+        }
+        .am-list-extra{
+            font-size: vw(30) !important;
+            text-align: left !important;
+        }
+        
+    }
+    .miaoshu{
+        display: flex;
+        padding: vw(28) vw(30);
+        justify-content: space-between;
+        width: 100%;
+        background-color: #fff;
+        margin-bottom: vw(30);
+        div{
+            width: vw(120);
+            font-size: vw(30);
+            color: #666
+        }
+        p{
+            width: vw(484);
+            font-size: vw(28);
+        }
+        }
+        .am-steps{
+            padding:vw(28) vw(30);
+            margin-bottom: vw(20);
+            background-color: #fff !important;
+            .am-steps-icon{
+                color: #ff6600;
+                
+            }
+           .am-steps-item-title{
+               font-size: vw(28);
+               font-weight: 100;
+               color: #ff6600;
+           }
+           .am-steps-item-description{
+               font-size: vw(26);
+               color: #666;
+           }
+           .am-steps-item-tail{
+color: #ff6600;
+           }
+        }
+    }
+    .footer{
+        height: vw(96);
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        border-top: 1px solid #ccc;
+        z-index: 1000;
+        p{
+            font-size: vw(30);
+            padding: vw(20) 0 0 vw(20);
+            span{
+                // font-weight: 900;
+                font-size: vw(36);
+                color: #ff6600;
+            }
+        }
+        .right{
+            display: flex;
+            .sc{
+                width: vw(116);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: vw(20);
+                color: #5f646e;
+                border-left: 1px solid #ccc;
+            }
+            .am-button{
+                background-color: #ff6600;
+                color: #fff;
+                border: none;
+                border-radius: 0;
+                width: vw(248);
+                font-size: vw(30);
+            }
         }
     }
 }
