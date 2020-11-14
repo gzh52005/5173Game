@@ -65,7 +65,6 @@ class App extends React.Component {
       this.goto = this.goto.bind(this)
     }
   goto(path){
-      console.log(path);
       this.props.history.push(path)
       this.setState({
           selectedTab:path
@@ -76,11 +75,15 @@ class App extends React.Component {
         selectedTab:this.props.location.pathname
     })
   }
+componentWillReceiveProps(newp){
+    this.setState({
+        selectedTab:newp.location.pathname
+    })
+    
+}
     render(props) {
       let path=  this.props.location.pathname
       return (
-        
-            
         <div style={{display:"flex",flexDirection:"column",height:"100%"}}>
             <div style={{flex:1,background:"#F1F1F1",overflowY:"auto"}}>
             <Switch >
@@ -102,7 +105,7 @@ class App extends React.Component {
             </Switch>
             </div>
             {  
-                /^\/details/.test(path)||  /^\/search/.test(path) ||  /^\/login/.test(path)||/^\/history/.test(path) ?'': <div style={{ width: '100%',height:'50px' }}>
+                /^\/details/.test(path)||  /^\/search/.test(path) ||  /^\/login/.test(path)||/^\/history/.test(path) || /^\/onedetail/.test(path)?'': <div style={{ width: '100%',height:'50px' }}>
                 <TabBar
                 unselectedTintColor="#949494"
                 tintColor="#ff6600"
