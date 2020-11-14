@@ -15,20 +15,19 @@ function Mine (props){
     let [haslogin,changeHas]=useState('')
     let [username,changeName]=useState('')
     let mineInfo =useCallback(function(){
-        console.log(haslogin)
         if(haslogin){
             props.history.push('/mineinfo')
         }else{
             props.history.push('/login')
         }
-    })
+    },[])
 
     useEffect(function(){
         islogin().then(res=>{
             changeHas(res)})
-        console.log(haslogin);
         getUserName().then(res=>{changeName(res)})
-    })
+    },[])
+
         return (
             <div className='Mine'>
                 <div className='MineTop'>个人中心</div>
@@ -62,7 +61,7 @@ function Mine (props){
 
                         datax[1].map(items => {
                             return (
-                                <Item  key={items.icon} extra={items.center} arrow="horizontal" onClick={() => { }}>
+                                <Item  key={items.icon} extra={items.center} arrow="horizontal" onClick={() => {props.history.push(items.path)}}>
                                 <div>
                                     <svg className="icon" aria-hidden="true">
                                         <use xlinkHref={items.icon}></use>
@@ -79,7 +78,7 @@ function Mine (props){
                     datax[2].map(items => {
                         return (
                             <List key={items.icon} className="my-list avclass">
-                               <Item extra={items.center} className='otherItem' arrow="horizontal"  onClick={() => { }}>
+                               <Item extra={items.center} className='otherItem' arrow="horizontal"  onClick={() => {props.history.push(items.path) }}>
                                     <div>
                                         <svg className="icon" aria-hidden="true">
                                             <use xlinkHref={items.icon}></use>

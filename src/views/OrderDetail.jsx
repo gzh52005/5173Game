@@ -1,11 +1,19 @@
 import React from 'react'
+import { List } from 'antd-mobile';
 
-function OrderDetail(props){
-    let {data}=props
-    console.log(data);
-    return(
+const Item = List.Item;
+const Brief = Item.Brief;
+function OrderDetail(props) {
+    let {path,data}=props.data.data
+    return (
         <div>
-            {data.data.title}
+            {data}
+            <div className='error'>
+
+            </div>
+            <div className={path}>
+
+            </div>
         </div>
     )
 }
