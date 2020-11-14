@@ -1,0 +1,36 @@
+@function vw($px){
+    @return ($px/750)*100vw
+}
+.OrderDetail{
+    .error{
+        width: 100%;
+        height: vw(120);
+        padding: vw(20) vw(28);
+        display: flex;
+        align-self: center;
+        background-color: #FFFDF4;
+        .iconBox{
+            display: flex;
+            align-self: center;
+            padding:0 vw(8);
+        }
+    }
+    .noshopItem{
+        margin-top: vw(15);
+        height: vw(160);
+        width: 100%;
+        p{
+            width: 100%;
+            height: vw(126);
+            text-align: center;
+            margin: 0;
+            img{
+                width: vw(166);
+                height: vw(126);
+            }
+        }
+        h6{
+            text-align: center;
+        }
+    }
+}
