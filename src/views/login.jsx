@@ -5,6 +5,7 @@ import {message } from 'antd';
 import {Toast} from 'antd-mobile'
 import request from '../utils/request'
 import {searchFormat} from '../utils'
+import HeaderCom from '../components/headerCom'
 
 function Login(props){
     let [username,changeN]=useState('')
@@ -45,9 +46,12 @@ function Login(props){
         }
     },[])
   
+    let gotoReg=useCallback(function(){
+        props.history.replace('/reg')
+    })
     return (
             <div className='login'>
-                <header className='loginHead'>5173登录</header>
+                  <HeaderCom data={{props,title:"5173用户登录",isselect:false}}/>
                 <form className='loginFrom' >
                     <p>
                         <label htmlFor="username">用户名</label>
@@ -57,6 +61,10 @@ function Login(props){
                         <label htmlFor="password">密&nbsp;&nbsp;&nbsp;码</label>
                         <input type="text" onBlur={changePsw} id='password' placeholder='请输入密码' />
                     </p>
+                    <h6>
+                         <span onClick={gotoReg}>注册用户</span>
+                    </h6>
+                   
                     <input type="button" className='loginBtn' value="登录" onClick={login}/>
                 </form>
             </div>
