@@ -32,6 +32,18 @@ export async function getUserName() {
     }
 }
 
+export async function getUserSing() {
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'))
+    let name
+    if (currentUser) {
+        let uid = currentUser.uid
+        let p = await request.get(`/homeApi/user/getuser/${uid}`)
+        if (p.flag) {
+            return name = p.data[0].sign
+        }
+    }
+}
+
 export function quit(){
     localStorage.removeItem('currentUser')
 }
