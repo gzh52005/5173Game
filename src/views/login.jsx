@@ -1,4 +1,4 @@
-import React, { useCallback, useState,useEffect} from 'react'
+import React, { useCallback, useState,useEffect,useRef} from 'react'
 import '../layout/login.scss'
 import '../layout/base.css'
 import {message } from 'antd';
@@ -10,7 +10,6 @@ import HeaderCom from '../components/headerCom'
 function Login(props){
     let [username,changeN]=useState('')
     let [password,changeP]=useState('')
-    let textInput = React.createRef();
 
     let changeName=useCallback(function(e){
         changeN(e.target.value)
@@ -18,7 +17,6 @@ function Login(props){
     let changePsw=useCallback(function(e){
         changeP(e.target.value)
     })
-
     let login=useCallback(async function(){
         if(!username){
             Toast.info('请输入用户名');
@@ -35,14 +33,14 @@ function Login(props){
           }   
         }
     })
+    const couterRef = useRef();
     useEffect(function(){
         let search= props.location.search
         let params=searchFormat(search)
+        console.log(params);
         if(params.username){
             changeN(params.username)
-            setTimeout(()=>{
-            textInput.value=username
-            },500)
+           couterRef.current.value=params.username
         }
     },[])
   
@@ -55,7 +53,7 @@ function Login(props){
                 <form className='loginFrom' >
                     <p>
                         <label htmlFor="username">用户名</label>
-                        <input type="text" id='username' onBlur={changeName} placeholder='绑定手机/用户名' ref={textInput}/>
+                        <input type="text" id='username' onBlur={changeName} placeholder='绑定手机/用户名' ref={couterRef}/>
                     </p>
                     <p>
                         <label htmlFor="password">密&nbsp;&nbsp;&nbsp;码</label>
